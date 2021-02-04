@@ -16,12 +16,14 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/resume" component={Resume} />
-        <Route path="/contact" component={Contact} />
-      </Switch>
+      <div className="flex flex-col flex-grow">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </div>
       <Footer />
     </BrowserRouter>
   );
