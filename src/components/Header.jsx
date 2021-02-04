@@ -21,12 +21,12 @@ const social = [
   { name: 'stackoverflow', svg: svg.stackoverflow, link: '' },
 ];
 
-export default function Header() {
+export default function Header({ toggleSidebar }) {
   return (
     <header className="flex flex-col py-3 my-3 justify-items-center px-6 sm:px-8 md:px-4 w-full max-w-screen-lg mx-auto border-b">
       <div className="flex flex-row justify-between md:justify-center">
         <div className="flex flex-col justify-center md:hidden">
-          <button className="icon-button">
+          <button className="icon-button" onClick={toggleSidebar}>
             <svg viewBox={svg.menu.viewbox}>
               <title>menu</title>
               <path d={svg.menu.path} />
