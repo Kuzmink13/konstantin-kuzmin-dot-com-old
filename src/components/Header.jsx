@@ -6,20 +6,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as svg from '../assets/svg.json';
 
-const links = [
-  { name: 'Projects', link: '/Projects' },
-  { name: 'Resume', link: '/Resume' },
-  { name: 'Contact', link: '/Contact' },
-];
-
-const social = [
-  { name: 'twitter', svg: svg.twitter, link: '' },
-  { name: 'linkedin', svg: svg.linkedin, link: '' },
-  { name: 'github', svg: svg.github, link: 'https://github.com/Kuzmink13' },
-  // { name: 'instagram', svg: svg.instagram, link: '' },
-  { name: 'youtube', svg: svg.youtube, link: '' },
-  { name: 'stackoverflow', svg: svg.stackoverflow, link: '' },
-];
+import Links from './Links';
+import Social from './Social';
 
 export default function Header({ toggleSidebar }) {
   return (
@@ -35,17 +23,7 @@ export default function Header({ toggleSidebar }) {
         </div>
 
         <div className="hidden md:flex flex-col-reverse justify-center w-56">
-          <ul className="flex flex-row justify-around">
-            {links.map((el) => (
-              <li key={el.name} className="">
-                <Link to={el.link}>
-                  <h4 className="hover:underline hover:text-gray-900">
-                    {el.name}
-                  </h4>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <Links />
         </div>
 
         <Link className="mx-6 lg:mx-16" to="/">
@@ -59,18 +37,7 @@ export default function Header({ toggleSidebar }) {
         </Link>
 
         <div className="hidden md:flex flex-col-reverse justify-center w-56">
-          <ul className="flex flex-row justify-around">
-            {social.map((el) => (
-              <li key={el.name} className="icon-button">
-                <a href={el.link} target="_">
-                  <svg viewBox={el.svg.viewbox}>
-                    <title>{el.name}</title>
-                    <path d={el.svg.path} />
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <Social />
         </div>
 
         <div className="flex flex-col justify-center md:hidden">
