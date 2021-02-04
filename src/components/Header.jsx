@@ -48,8 +48,8 @@ export default function Header({ toggleSidebar }) {
           </ul>
         </div>
 
-        <Link to="/">
-          <hgroup className="mx-6 lg:mx-16">
+        <Link className="mx-6 lg:mx-16" to="/">
+          <hgroup>
             <h1 className="text-right">KONSTANTIN</h1>
             <h1 className="text-right">KUZMIN</h1>
             <h4 className="hidden sm:block mt-1">
