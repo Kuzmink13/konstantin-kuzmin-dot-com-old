@@ -50,10 +50,15 @@ export default function Sidebar({ toggleSidebar }) {
       <PopOver closeFn={closeFn} />
       <div
         id="sidebar"
-        className="md:hidden absolute w-0 h-screen bg-white transition-all duration-250"
+        className="md:hidden absolute w-0 h-screen bg-white transition-all duration-250 py-12 overflow-hidden"
       >
-        <Links />
-        <Social />
+        <h3 className="text-center py-3">Navigation</h3>
+        <ul className="border-t border-b flex flex-col justify-around mx-8 py-3 space-y-3 text-center">
+          <Links {...{ toggleSidebar }} showHome={true} />
+        </ul>
+        <ul className="flex flex-row justify-around px-6 py-4">
+          <Social />
+        </ul>
       </div>
     </Fragment>
   );

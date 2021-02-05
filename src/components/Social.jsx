@@ -2,7 +2,7 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import * as svg from '../assets/svg.json';
 
 const social = [
@@ -16,7 +16,7 @@ const social = [
 
 export default function Social() {
   return (
-    <ul className="flex flex-row justify-around">
+    <Fragment>
       {social.map((el) => (
         <li key={el.name} className="icon-button">
           <a href={el.link} target="_">
@@ -27,6 +27,6 @@ export default function Social() {
           </a>
         </li>
       ))}
-    </ul>
+    </Fragment>
   );
 }

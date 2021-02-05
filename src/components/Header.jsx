@@ -23,7 +23,9 @@ export default function Header({ toggleSidebar }) {
         </div>
 
         <div className="hidden md:flex flex-col-reverse justify-center w-56">
-          <Links />
+          <ul className="flex flex-row justify-around">
+            <Links />
+          </ul>
         </div>
 
         <Link className="mx-6 lg:mx-16" to="/">
@@ -37,7 +39,9 @@ export default function Header({ toggleSidebar }) {
         </Link>
 
         <div className="hidden md:flex flex-col-reverse justify-center w-56">
-          <Social />
+          <ul className="flex flex-row justify-around">
+            <Social />
+          </ul>
         </div>
 
         <div className="flex flex-col justify-center md:hidden">
