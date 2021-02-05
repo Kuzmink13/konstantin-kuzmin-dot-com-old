@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         kanit: ['Kanit', 'system-ui'],
+        roboto: ['Roboto', 'system-ui'],
       },
     },
   },
