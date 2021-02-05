@@ -9,6 +9,9 @@
   h1 {
     @apply font-kanit text-3xl sm:text-5xl font-semibold leading-6 sm:leading-10 text-gray-900 tracking-wider;
   }
+  h2 {
+    @apply font-kanit text-2xl sm:text-3xl font-semibold text-gray-900 tracking-wider;
+  }
   h3 {
     @apply font-kanit text-2xl font-semibold text-gray-900 tracking-wider;
   }
