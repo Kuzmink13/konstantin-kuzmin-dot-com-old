@@ -2,13 +2,28 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function PopOver({ closeFn }) {
+  // ANIMATE COMPONENT
+  useEffect(() => {
+    const clickableBG = document.getElementById('pop');
+    clickableBG.classList.remove('opacity-0');
+    clickableBG.classList.add('opacity-30');
+  }, []);
+
+  const close = () => {
+    closeFn();
+    const clickableBG = document.getElementById('pop');
+    clickableBG.classList.remove('opacity-30');
+    clickableBG.classList.add('opacity-0');
+  };
+
   return (
     <div
-      className="md:hidden absolute h-screen w-screen bg-gray-700 opacity-30"
-      onClick={() => closeFn()}
+      id="pop"
+      className="md:hidden absolute h-screen w-screen bg-gray-700 opacity-0 transition-all duration-250"
+      onClick={() => close()}
     ></div>
   );
 }
