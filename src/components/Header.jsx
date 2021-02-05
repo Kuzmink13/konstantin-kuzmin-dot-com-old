@@ -24,7 +24,7 @@ export default function Header({ toggleSidebar }) {
 
         <div className="hidden md:flex flex-col-reverse justify-center w-56">
           <ul className="flex flex-row justify-around">
-            <Links />
+            <Links {...{ toggleSidebar }} />
           </ul>
         </div>
 
