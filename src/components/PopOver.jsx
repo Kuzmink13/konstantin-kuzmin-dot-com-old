@@ -22,7 +22,7 @@ export default function PopOver({ closeFn }) {
   return (
     <div
       id="pop"
-      className="md:hidden absolute h-screen w-screen bg-gray-700 opacity-0 transition-all duration-250"
+      className="md:hidden fixed h-screen w-full bg-gray-700 opacity-0 transition-all duration-250"
       onClick={() => close()}
     ></div>
   );
