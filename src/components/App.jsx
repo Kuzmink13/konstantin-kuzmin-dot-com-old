@@ -10,7 +10,7 @@ import Sidebar from './Sidebar';
 import Home from './Home';
 import Projects from './Projects';
 import Resume from './Resume';
-import Contact from './Contact';
+// import Contact from './Contact';
 import Footer from './Footer';
 
 import useToggle from '../hooks/useToggle';
@@ -27,7 +27,7 @@ export default function App() {
           <Route path="/" exact component={Home} />
           <Route path="/projects" component={Projects} />
           <Route path="/resume" component={Resume} />
-          <Route path="/contact" component={Contact} />
+          {/* <Route path="/contact" component={Contact} /> */}
         </Switch>
       </div>
       <Footer />

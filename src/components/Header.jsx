@@ -45,12 +45,12 @@ export default function Header({ toggleSidebar }) {
         </div>
 
         <div className="flex flex-col justify-center md:hidden">
-          <button className="icon-button">
+          <a href="mailto:contact@konstantinkuzmin.com" className="icon-button">
             <svg viewBox={svg.send.viewbox}>
               <title>contact</title>
               <path d={svg.send.path} />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
       <h4 className="block sm:hidden mt-1 mx-auto text-sm">
