@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const links = [
   { name: 'Home', link: '/' },
   { name: 'Projects', link: '/Projects' },
-  { name: 'Resume', link: '/Resume' },
+  // { name: 'Resume', link: '/Resume' },
   // { name: 'Contact', link: '/Contact' },
 ];
 
@@ -24,6 +24,13 @@ export default function Links({ toggleSidebar, showHome = false }) {
             </Link>
           </li>
         ))}
+
+      <li key="Resume">
+        <a href="./konstantinKuzmin_resume" download>
+          <h4 className="hover:underline hover:text-gray-900">Resume</h4>
+        </a>
+      </li>
+
       <li key="Contact">
         <a href="mailto:contact@konstantinkuzmin.com">
           <h4 className="hover:underline hover:text-gray-900">Contact</h4>
