@@ -22,7 +22,7 @@
     @apply font-roboto text-gray-900;
   }
   a {
-    @apply text-gray-600 hover:text-gray-900;
+    @apply font-roboto text-gray-600 hover:text-gray-900;
   }
   svg {
     @apply fill-current;
