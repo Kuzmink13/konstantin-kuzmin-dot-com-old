@@ -34,6 +34,6 @@
     @apply hover:underline hover:text-gray-900;
   }
   .icon-button {
-    @apply text-gray-600 hover:text-gray-900 h-4 w-4 sm:h-6 sm:w-6;
+    @apply text-gray-600 hover:text-gray-900 h-5 w-5;
   }
 }

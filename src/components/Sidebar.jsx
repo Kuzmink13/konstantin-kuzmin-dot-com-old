@@ -56,7 +56,7 @@ export default function Sidebar({ toggleSidebar }) {
         <ul className="border-t border-b flex flex-col justify-around mx-8 py-3 space-y-3 text-center">
           <Links {...{ toggleSidebar }} showHome={true} />
         </ul>
-        <ul className="flex flex-row justify-around px-6 py-4">
+        <ul className="flex flex-row justify-around px-5 py-4">
           <Social />
         </ul>
       </div>
