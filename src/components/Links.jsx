@@ -26,7 +26,7 @@ export default function Links({ toggleSidebar, showHome = false }) {
         ))}
 
       <li key="Resume">
-        <a href="./konstantinKuzmin_resume" download>
+        <a href="./konstantinkuzmin_resume.pdf" download>
           <h4 className="hover:underline hover:text-gray-900">Resume</h4>
         </a>
       </li>
