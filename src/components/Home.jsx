@@ -34,7 +34,7 @@ export default function Home() {
           tools. I believe there is massive potential in using technology to
           help make people into the best version of themselves. We are just
           scratching the surface of what tech can do in the fields of
-          interpersonal business, communication, and mental health.
+          interpersonal business, communication, and self-actualization.
         </p>
       </div>
     </Fragment>
