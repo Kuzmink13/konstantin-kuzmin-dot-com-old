@@ -10,12 +10,12 @@ export default function Home() {
       <img
         className="max-h-96 mx-auto my-3"
         alt="Konstantin Smiling"
-        src="./pryes_grayscale.jpg"
+        src="./backpack_grayscale_sm.jpg"
       ></img>
       <div className="sm:leading-relaxed max-w-lg mx-auto p-6 mb-8">
         <p className="pb-3">
           <strong>Hey, I’m Konstantin.</strong> I got started in software
-          development by auditing free MIT courses while quarantining from the
+          development by auditing free MIT courses while quarantining during the
           covid-19 pandemic. Since then, I’ve finished my first major web
           project and am now looking to get into the industry so I can continue
           to build my skill set and meet my personal and professional goals.
