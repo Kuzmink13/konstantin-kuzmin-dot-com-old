@@ -9,7 +9,7 @@ const myProjects = [
   {
     title: "Composer's Reference",
     description:
-      'An interactive music theory resource designed as a companion to the songwriting process. Built with React and TailwindCSS. Music engraving by Vexflow.js.',
+      'An interactive music theory resource designed as a companion to the songwriting process. Built with React and TailwindCSS. Music engraving by VexFlow.js.',
     img: {
       src: './compref_grayscale.png',
       alt: "composer's reference landing page",
