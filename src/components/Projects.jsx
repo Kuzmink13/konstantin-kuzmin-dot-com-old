@@ -9,34 +9,37 @@ const myProjects = [
   {
     title: "Composer's Reference",
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    img: { src: './pryes_grayscale.jpg', alt: 'alt text' },
+      'An interactive music theory resource designed as a companion to the songwriting process. Built with React and TailwindCSS. Music engraving by Vexflow.js.',
+    img: {
+      src: './compref_grayscale.png',
+      alt: "composer's reference landing page",
+    },
     links: [
       {
         title: "composer's reference link",
         text: 'Visit Project',
         icon: svg.link,
-        url: 'https://www.google.com',
+        url: 'https://www.composersreference.com',
       },
       {
         title: "composer's reference github link",
         text: 'Visit on Github',
         icon: svg.github,
-        url: 'https://www.google.com',
+        url: 'https://www.github.com/Kuzmink13/Composers-Reference',
       },
     ],
   },
   {
     title: 'KonstantinKuzmin.com',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    img: { src: './pryes_grayscale.jpg', alt: 'alt text' },
+      'A simple, responsive website that serves as my home on the internet. Built with React and TailwindCSS.',
+    img: { src: './kkdotcom.png', alt: 'konstantinkuzmin.com landing page' },
     links: [
       {
         title: 'konstantinkuzmin.com github link',
         text: 'Visit on Github',
         icon: svg.github,
-        url: 'https://www.google.com',
+        url: 'https://www.github.com/Kuzmink13/konstantin-kuzmin-dot-com',
       },
     ],
   },
@@ -51,7 +54,7 @@ function Project({ project, flip = false }) {
     >
       <div className="flex flex-col justify-center w-80 mx-auto md:w-full p-2 md:p-4">
         <h3>{project.title}</h3>
-        <p className="leading-snug">{project.description}</p>
+        <p>{project.description}</p>
         <ul className="flex flex-row justify-center space-x-8 mt-3">
           {project.links.map((link) => (
             <li key={link.title}>
@@ -71,7 +74,7 @@ function Project({ project, flip = false }) {
         </ul>
       </div>
       <img
-        className="w-80 p-2 md:p-4 mx-auto"
+        className="w-80 m-2 md:m-4 mx-auto border"
         alt={project.img.alt}
         src={project.img.src}
       ></img>
