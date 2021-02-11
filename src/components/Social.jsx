@@ -15,7 +15,7 @@ const social = [
   {
     name: 'linkedin',
     svg: svg.linkedin,
-    link: 'https://www.linkedin.com/in/konstantin-k-8b1a82b0/',
+    link: 'https://www.linkedin.com/in/kuzmink13',
   },
   { name: 'github', svg: svg.github, link: 'https://www.github.com/Kuzmink13' },
   {
