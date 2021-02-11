@@ -3,6 +3,7 @@
  */
 
 import React, { useEffect } from 'react';
+import useKeyboardFn from '../hooks/useKeyboardFn';
 
 export default function PopOver({ closeFn }) {
   // ANIMATE COMPONENT
@@ -18,6 +19,9 @@ export default function PopOver({ closeFn }) {
     clickableBG.classList.remove('opacity-30');
     clickableBG.classList.add('opacity-0');
   };
+
+  //CLOSE WITH KEYBOARD
+  useKeyboardFn(() => close(), ['Esc', 'Escape', 'Del', 'Delete']);
 
   return (
     <div
