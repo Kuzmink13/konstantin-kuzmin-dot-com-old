@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import * as svg from '../assets/svg.json';
+import * as svg from '../public/svg.json';
 
 const myProjects = [
   {

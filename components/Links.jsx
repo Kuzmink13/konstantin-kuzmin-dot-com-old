@@ -3,7 +3,7 @@
  */
 
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const links = [
   { name: 'Home', link: '/' },
@@ -19,7 +19,7 @@ export default function Links({ toggleSidebar, showHome = false }) {
         .filter((el) => el.name !== 'Home' || showHome)
         .map((el) => (
           <li key={el.name}>
-            <Link onClick={() => toggleSidebar(false)} to={el.link}>
+            <Link onClick={() => toggleSidebar(false)} href={el.link}>
               <h4 className="hover:underline hover:text-gray-900">{el.name}</h4>
             </Link>
           </li>

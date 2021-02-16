@@ -3,10 +3,15 @@
  */
 
 import React, { Fragment } from 'react';
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <Fragment>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <img
         className="max-h-96 mx-auto my-3"
         alt="Konstantin Smiling"

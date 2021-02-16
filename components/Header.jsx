@@ -3,8 +3,8 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import * as svg from '../assets/svg.json';
+import Link from 'next/link';
+import * as svg from '../public/svg.json';
 
 import Links from './Links';
 import Social from './Social';
@@ -28,7 +28,7 @@ export default function Header({ toggleSidebar }) {
           </ul>
         </div>
 
-        <Link className="mx-6 lg:mx-16" to="/">
+        <Link className="mx-6 lg:mx-16" href="/">
           <hgroup>
             <h1 className="text-right">KONSTANTIN</h1>
             <h1 className="text-right">KUZMIN</h1>
