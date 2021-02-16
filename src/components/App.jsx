@@ -22,7 +22,7 @@ export default function App() {
     <BrowserRouter>
       <Header {...{ isSidebarOpen, toggleSidebar }} />
       {isSidebarOpen && <Sidebar {...{ toggleSidebar }} />}
-      <div className="flex flex-col flex-grow">
+      <div className="flex flex-col flex-none">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/projects" component={Projects} />
