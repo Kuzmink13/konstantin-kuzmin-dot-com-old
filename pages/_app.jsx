@@ -9,7 +9,7 @@ import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 
 import useToggle from '../hooks/useToggle';
-// import '../styles/globals.css'
+import '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }) {
   const [isSidebarOpen, toggleSidebar] = useToggle();
