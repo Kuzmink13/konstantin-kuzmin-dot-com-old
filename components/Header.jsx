@@ -29,13 +29,15 @@ export default function Header({ toggleSidebar }) {
         </div>
 
         <Link className="mx-6 lg:mx-16" href="/">
-          <hgroup>
-            <h1 className="text-right">KONSTANTIN</h1>
-            <h1 className="text-right">KUZMIN</h1>
-            <h4 className="hidden sm:block mt-1">
-              Software Developer, Composer, Minnesotan
-            </h4>
-          </hgroup>
+          <a>
+            <hgroup>
+              <h1 className="text-right">KONSTANTIN</h1>
+              <h1 className="text-right">KUZMIN</h1>
+              <h4 className="hidden sm:block mt-1">
+                Software Developer, Composer, Minnesotan
+              </h4>
+            </hgroup>
+          </a>
         </Link>
 
         <div className="hidden md:flex flex-col-reverse justify-center w-56">

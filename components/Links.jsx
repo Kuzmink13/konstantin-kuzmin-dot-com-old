@@ -20,7 +20,11 @@ export default function Links({ toggleSidebar, showHome = false }) {
         .map((el) => (
           <li key={el.name}>
             <Link onClick={() => toggleSidebar(false)} href={el.link}>
-              <h4 className="hover:underline hover:text-gray-900">{el.name}</h4>
+              <a>
+                <h4 className="hover:underline hover:text-gray-900">
+                  {el.name}
+                </h4>
+              </a>
             </Link>
           </li>
         ))}
