@@ -34,7 +34,7 @@ const myProjects = [
   {
     title: 'KonstantinKuzmin.com',
     description:
-      'A simple, responsive website that serves as my home on the internet. Built with React and TailwindCSS.',
+      'A simple, responsive website that serves as my home on the internet. Built with React, Next.js and TailwindCSS.',
     img: {
       src: '/kkdotcom.png',
       alt: 'konstantinkuzmin.com landing page',
