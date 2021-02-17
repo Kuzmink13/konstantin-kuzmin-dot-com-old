@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Fragment>
       <img
-        className="h-96 mx-auto my-3"
+        className="max-h-96 mx-auto my-3"
         alt="picture of Konstantin"
         src="/backpack_grayscale_sm.jpg"
         // height={384}
