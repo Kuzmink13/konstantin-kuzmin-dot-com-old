@@ -7,9 +7,9 @@ import Link from 'next/link';
 
 const links = [
   { name: 'Home', link: '/' },
-  { name: 'Projects', link: '/Projects' },
-  // { name: 'Resume', link: '/Resume' },
-  // { name: 'Contact', link: '/Contact' },
+  { name: 'Projects', link: '/projects' },
+  // { name: 'Resume', link: '/resume' },
+  // { name: 'Contact', link: '/contact' },
 ];
 
 export default function Links({ toggleSidebar, showHome = false }) {
