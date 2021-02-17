@@ -82,7 +82,7 @@ function Project({ project, flip = false }) {
   );
 }
 
-export default function Projects() {
+export default function projects() {
   return (
     <div className="w-full max-w-screen-md mx-auto">
       {/* <h2 className="px-2 md:px-4 mx-auto w-80 md:w-full">Projects</h2> */}

@@ -4,6 +4,6 @@
 
 import React from 'react';
 
-export default function Resume() {
+export default function resume() {
   return <h1>Resume</h1>;
 }
