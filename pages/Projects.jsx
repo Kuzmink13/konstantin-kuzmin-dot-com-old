@@ -2,7 +2,6 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React from 'react';
 import Image from 'next/image';
 import * as svg from '../public/svg.json';
 

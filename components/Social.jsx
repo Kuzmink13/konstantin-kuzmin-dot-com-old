@@ -2,7 +2,7 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import * as svg from '../public/svg.json';
 
 const social = [
