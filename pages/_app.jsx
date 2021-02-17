@@ -15,7 +15,7 @@ import '../styles/globals.css';
 export default function MyApp({ Component, pageProps }) {
   const [isSidebarOpen, toggleSidebar] = useToggle();
   return (
-    <div className="h-full w-full overflow-y-scroll flex flex-col justify-between">
+    <div className="h-screen w-screen overflow-y-scroll flex flex-col justify-between">
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="./favicon.ico" />
@@ -32,7 +32,7 @@ export default function MyApp({ Component, pageProps }) {
 
       <Header {...{ isSidebarOpen, toggleSidebar }} />
       {isSidebarOpen && <Sidebar {...{ toggleSidebar }} />}
-      <div className="flex flex-col flex-none">
+      <div className="flex flex-col flex-grow">
         <Component {...pageProps} />
       </div>
       <Footer />
