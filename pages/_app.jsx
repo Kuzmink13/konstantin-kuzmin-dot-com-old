@@ -31,10 +31,10 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
 
       <Header {...{ isSidebarOpen, toggleSidebar }} />
-      {isSidebarOpen && <Sidebar {...{ toggleSidebar }} />}
       <div className="flex flex-col flex-grow">
         <Component {...pageProps} />
       </div>
+      {isSidebarOpen && <Sidebar {...{ toggleSidebar }} />}
       <Footer />
     </div>
   );

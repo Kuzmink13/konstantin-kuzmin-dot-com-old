@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import Image from 'next/image';
 import * as svg from '../public/svg.json';
 
 const myProjects = [
@@ -11,8 +12,10 @@ const myProjects = [
     description:
       'An interactive music theory resource designed as a companion to the songwriting process. Built with React and TailwindCSS. Music engraving by VexFlow.js.',
     img: {
-      src: './compref_grayscale.png',
+      src: '/compref_grayscale.png',
       alt: "composer's reference landing page",
+      width: 724,
+      height: 458,
     },
     links: [
       {
@@ -33,7 +36,12 @@ const myProjects = [
     title: 'KonstantinKuzmin.com',
     description:
       'A simple, responsive website that serves as my home on the internet. Built with React and TailwindCSS.',
-    img: { src: './kkdotcom.png', alt: 'konstantinkuzmin.com landing page' },
+    img: {
+      src: '/kkdotcom.png',
+      alt: 'konstantinkuzmin.com landing page',
+      width: 972,
+      height: 574,
+    },
     links: [
       {
         title: 'konstantinkuzmin.com github link',
@@ -73,11 +81,15 @@ function Project({ project, flip = false }) {
           ))}
         </ul>
       </div>
-      <img
-        className="w-80 m-2 md:m-4 mx-auto border"
-        alt={project.img.alt}
-        src={project.img.src}
-      ></img>
+      <div className="w-80 flex-shrink-0 m-2 md:m-4 mx-auto border">
+        <Image
+          alt={project.img.alt}
+          src={project.img.src}
+          width={project.img.width}
+          height={project.img.height}
+          quality={50}
+        ></Image>
+      </div>
     </div>
   );
 }
