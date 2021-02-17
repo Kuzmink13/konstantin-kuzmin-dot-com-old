@@ -2,7 +2,7 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import * as svg from '../public/svg.json';
 
 const myProjects = [
@@ -13,8 +13,8 @@ const myProjects = [
     img: {
       src: '/compref_grayscale.png',
       alt: "composer's reference landing page",
-      width: 724,
-      height: 458,
+      // width: 724,
+      // height: 458,
     },
     links: [
       {
@@ -38,8 +38,8 @@ const myProjects = [
     img: {
       src: '/kkdotcom.png',
       alt: 'konstantinkuzmin.com landing page',
-      width: 972,
-      height: 574,
+      // width: 972,
+      // height: 574,
     },
     links: [
       {
@@ -80,15 +80,16 @@ function Project({ project, flip = false }) {
           ))}
         </ul>
       </div>
-      <div className="w-80 flex-shrink-0 m-2 md:m-4 mx-auto border">
-        <Image
-          alt={project.img.alt}
-          src={project.img.src}
-          width={project.img.width}
-          height={project.img.height}
-          quality={50}
-        ></Image>
-      </div>
+      {/* <div className="w-80 flex-shrink-0 m-2 md:m-4 mx-auto border"> */}
+      <img
+        className="w-80 flex-shrink-0 m-2 md:m-4 mx-auto border"
+        alt={project.img.alt}
+        src={project.img.src}
+        // width={project.img.width}
+        // height={project.img.height}
+        // quality={50}
+      ></img>
+      {/* </div> */}
     </div>
   );
 }
