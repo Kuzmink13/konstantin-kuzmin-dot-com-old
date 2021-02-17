@@ -2,7 +2,7 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React, { Fragment, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { createFocusTrap } from 'focus-trap';
 
 import PopOver from './PopOver';

@@ -2,14 +2,14 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Fragment } from 'react';
+import Link from 'next/link';
 
 const links = [
   { name: 'Home', link: '/' },
-  { name: 'Projects', link: '/Projects' },
-  // { name: 'Resume', link: '/Resume' },
-  // { name: 'Contact', link: '/Contact' },
+  { name: 'Projects', link: '/projects' },
+  // { name: 'Resume', link: '/resume' },
+  // { name: 'Contact', link: '/contact' },
 ];
 
 export default function Links({ toggleSidebar, showHome = false }) {
@@ -19,8 +19,12 @@ export default function Links({ toggleSidebar, showHome = false }) {
         .filter((el) => el.name !== 'Home' || showHome)
         .map((el) => (
           <li key={el.name}>
-            <Link onClick={() => toggleSidebar(false)} to={el.link}>
-              <h4 className="hover:underline hover:text-gray-900">{el.name}</h4>
+            <Link href={el.link}>
+              <a onClick={() => toggleSidebar(false)}>
+                <h4 className="hover:underline hover:text-gray-900">
+                  {el.name}
+                </h4>
+              </a>
             </Link>
           </li>
         ))}

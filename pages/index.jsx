@@ -2,16 +2,21 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <Fragment>
-      <img
-        className="max-h-96 mx-auto my-3"
-        alt="Konstantin Smiling"
-        src="./backpack_grayscale_sm.jpg"
-      ></img>
+      <div className="mx-auto my-3">
+        <Image
+          alt="picture of Konstantin"
+          src="/backpack_grayscale_sm.jpg"
+          height={384}
+          width={540}
+          quality={100}
+        ></Image>
+      </div>
       <div className="sm:leading-relaxed max-w-lg mx-auto p-6 mb-8">
         <p className="pb-3">
           <strong>Hey, I’m Konstantin.</strong> I got started in software
