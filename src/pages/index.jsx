@@ -2,19 +2,19 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import { Fragment } from 'react';
-// import Image from 'next/image';
+import React from 'react';
+
+import HeroImage from '../assets/backpack_grayscale_sm.jpg';
+
+import Layout from '../components/Layout';
 
 export default function Home() {
   return (
-    <Fragment>
+    <Layout>
       <img
         className="max-h-96 mx-auto my-3"
-        alt="picture of Konstantin"
-        src="/backpack_grayscale_sm.jpg"
-        // height={384}
-        // width={540}
-        // quality={100}
+        alt="Konstantin on a hike"
+        src={HeroImage}
       ></img>
       <div className="sm:leading-relaxed max-w-lg mx-auto p-6 mb-8">
         <p className="pb-3">
@@ -41,6 +41,6 @@ export default function Home() {
           interpersonal business, communication, and self-actualization.
         </p>
       </div>
-    </Fragment>
+    </Layout>
   );
 }

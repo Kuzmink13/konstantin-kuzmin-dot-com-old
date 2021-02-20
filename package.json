@@ -1,43 +1,28 @@
 {
-  "name": "konstantin-kuzmin-dot-com",
-  "version": "1.1.0",
+  "name": "my-gatsby-site",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.2",
-    "focus-trap": "^6.3.0",
-    "next": "^10.0.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "web-vitals": "^0.2.4"
-  },
+  "description": "My Gatsby Site",
+  "author": "KuzminK13",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "focus-trap": "^6.3.0",
+    "gatsby": "^2.32.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
+    "gatsby-plugin-postcss": "^3.7.0",
     "postcss": "^8.2.6",
     "tailwindcss": "^2.0.3"
   }

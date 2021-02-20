@@ -2,11 +2,13 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import Link from 'next/link';
-import * as svg from '../public/svg.json';
+import React from 'react';
+import { Link } from 'gatsby';
 
 import Links from './Links';
 import Social from './Social';
+
+import * as svg from '../data/svg.json';
 
 export default function Header({ toggleSidebar }) {
   return (
@@ -27,16 +29,14 @@ export default function Header({ toggleSidebar }) {
           </ul>
         </div>
 
-        <Link href="/">
-          <a className="mx-6 lg:mx-16">
-            <hgroup>
-              <h1 className="text-right">KONSTANTIN</h1>
-              <h1 className="text-right">KUZMIN</h1>
-              <h4 className="hidden sm:block mt-1">
-                Software Developer, Composer, Minnesotan
-              </h4>
-            </hgroup>
-          </a>
+        <Link to="/" className="mx-6 lg:mx-16">
+          <hgroup>
+            <h1 className="text-right">KONSTANTIN</h1>
+            <h1 className="text-right">KUZMIN</h1>
+            <h4 className="hidden sm:block mt-1">
+              Software Developer, Composer, Minnesotan
+            </h4>
+          </hgroup>
         </Link>
 
         <div className="hidden md:flex flex-col-reverse justify-center w-56">

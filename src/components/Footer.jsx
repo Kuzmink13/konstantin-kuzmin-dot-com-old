@@ -2,6 +2,8 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
+import React from 'react';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 w-full py-1">

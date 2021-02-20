@@ -2,8 +2,10 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import { Fragment } from 'react';
-import Link from 'next/link';
+import React, { Fragment } from 'react';
+import { Link } from 'gatsby';
+
+import res from '../data/konstantinkuzmin_resume.pdf';
 
 const links = [
   { name: 'Home', link: '/' },
@@ -19,18 +21,14 @@ export default function Links({ toggleSidebar, showHome = false }) {
         .filter((el) => el.name !== 'Home' || showHome)
         .map((el) => (
           <li key={el.name}>
-            <Link href={el.link}>
-              <a onClick={() => toggleSidebar(false)}>
-                <h4 className="hover:underline hover:text-gray-900">
-                  {el.name}
-                </h4>
-              </a>
+            <Link to={el.link} onClick={() => toggleSidebar(false)}>
+              <h4 className="hover:underline hover:text-gray-900">{el.name}</h4>
             </Link>
           </li>
         ))}
 
       <li key="Resume">
-        <a href="/konstantinkuzmin_resume.pdf" download>
+        <a href={res} download>
           <h4 className="hover:underline hover:text-gray-900">Resume</h4>
         </a>
       </li>

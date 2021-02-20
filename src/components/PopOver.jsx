@@ -2,7 +2,8 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+
 import useKeyboardFn from '../hooks/useKeyboardFn';
 
 export default function PopOver({ closeFn }) {

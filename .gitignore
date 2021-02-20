@@ -11,8 +11,10 @@
 # production
 /build
 /out
+/public
 
 # misc
+.cache
 .next
 .firebase
 .github
