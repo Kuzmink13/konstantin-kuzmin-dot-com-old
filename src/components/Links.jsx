@@ -5,7 +5,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 
-import res from '../data/konstantinkuzmin_resume.pdf';
+import res from '../../resume/konstantinkuzmin_resume.pdf';
 
 const links = [
   { name: 'Home', link: '/' },
