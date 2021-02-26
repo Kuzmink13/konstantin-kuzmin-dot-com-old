@@ -2,16 +2,14 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 
-import useToggle from '../hooks/useToggle';
-
 export default function Layout({ children }) {
-  const [isSidebarOpen, toggleSidebar] = useToggle();
+  const [sidebarState, setSidebarState] = useState(false);
   return (
     <div className="h-screen w-screen overflow-y-scroll flex flex-col justify-between">
       {/* <Head>
@@ -28,9 +26,9 @@ export default function Layout({ children }) {
         <title>Konstantin Kuzmin</title>
       </Head> */}
 
-      <Header {...{ isSidebarOpen, toggleSidebar }} />
+      <Header {...{ sidebarState, setSidebarState }} />
       <div className="flex flex-col flex-grow">{children}</div>
-      {isSidebarOpen && <Sidebar {...{ toggleSidebar }} />}
+      {sidebarState && <Sidebar {...{ setSidebarState }} />}
       <Footer />
     </div>
   );

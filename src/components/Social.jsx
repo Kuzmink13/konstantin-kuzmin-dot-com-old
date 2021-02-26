@@ -2,7 +2,7 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import * as svg from '../data/svg.json';
 
@@ -32,7 +32,7 @@ const social = [
 
 export default function Social() {
   return (
-    <Fragment>
+    <>
       {social.map((el) => (
         <li key={el.name} className="icon-button">
           <a href={el.link} target={el.target === undefined ? '_' : el.target}>
@@ -43,6 +43,6 @@ export default function Social() {
           </a>
         </li>
       ))}
-    </Fragment>
+    </>
   );
 }

@@ -5,7 +5,7 @@
 import CompRef from '../assets/compref_grayscale.png';
 import KK from '../assets/kkdotcom.png';
 
-import * as svg from '../data/svg.json';
+import * as svg from './svg.json';
 
 export default [
   {

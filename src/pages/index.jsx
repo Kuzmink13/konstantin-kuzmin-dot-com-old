@@ -15,7 +15,7 @@ export default function Home() {
         className="max-h-96 mx-auto my-3"
         alt="Konstantin on a hike"
         src={HeroImage}
-      ></img>
+      />
       <div className="sm:leading-relaxed max-w-lg mx-auto p-6 mb-8">
         <p className="pb-3">
           <strong>Hey, I’m Konstantin.</strong> I got started in software

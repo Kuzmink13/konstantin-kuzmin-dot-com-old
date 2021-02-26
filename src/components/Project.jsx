@@ -36,7 +36,7 @@ export default function Project({ project, flip = false }) {
         className="w-80 flex-shrink-0 m-2 md:m-4 mx-auto border"
         alt={project.img.alt}
         src={project.img.src}
-      ></img>
+      />
     </div>
   );
 }
