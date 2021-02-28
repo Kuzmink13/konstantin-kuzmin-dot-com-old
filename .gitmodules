@@ -1,0 +1,3 @@
+[submodule "public/resume"]
+	path = public/resume
+	url = https://github.com/Kuzmink13/resume.git
