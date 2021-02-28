@@ -5,13 +5,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import res from '../../resume/konstantinkuzmin_resume.pdf';
-
 const links = [
   { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
   { name: 'Projects', link: '/projects' },
-  // { name: 'Resume', link: '/resume' },
-  // { name: 'Contact', link: '/contact' },
+  { name: 'Resume', link: '/resume' },
+  { name: 'Contact', link: '/contact' },
 ];
 
 export default function Links({ setSidebarState, showHome = false }) {
@@ -26,18 +25,6 @@ export default function Links({ setSidebarState, showHome = false }) {
             </Link>
           </li>
         ))}
-
-      <li key="Resume">
-        <a href={res} download>
-          <h4 className="hover:underline hover:text-gray-900">Resume</h4>
-        </a>
-      </li>
-
-      <li key="Contact">
-        <a href="mailto:contact@konstantinkuzmin.com">
-          <h4 className="hover:underline hover:text-gray-900">Contact</h4>
-        </a>
-      </li>
     </>
   );
 }

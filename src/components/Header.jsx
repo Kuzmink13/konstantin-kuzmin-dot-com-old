@@ -5,62 +5,63 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Links from './Links';
-import Social from './Social';
-
+import links from '../data/links';
 import * as svg from '../data/svg.json';
 
 export default function Header({ setSidebarState }) {
   return (
-    <header className="flex flex-none flex-col py-3 my-3 justify-items-center px-6 sm:px-8 md:px-4 w-full max-w-screen-lg mx-auto border-b">
-      <div className="flex flex-row justify-between md:justify-center">
-        <div className="flex flex-col justify-center md:hidden">
-          <button
-            type="button"
-            className="icon-button"
-            onClick={() => setSidebarState(true)}
-          >
-            <svg viewBox={svg.menu.viewbox}>
-              <title>menu</title>
-              <path d={svg.menu.path} />
-            </svg>
-          </button>
-        </div>
-
-        <div className="hidden md:flex flex-col-reverse justify-center w-56">
-          <ul className="flex flex-row justify-around">
-            <Links {...{ setSidebarState }} />
-          </ul>
-        </div>
-
-        <Link to="/" className="mx-6 lg:mx-16">
-          <hgroup>
-            <h1 className="text-right">KONSTANTIN</h1>
-            <h1 className="text-right">KUZMIN</h1>
-            <h4 className="hidden sm:block mt-1">
-              Software Developer, Composer, Minnesotan
-            </h4>
-          </hgroup>
+    <header
+      className="flex flex-row justify-between items-center
+      w-full max-w-screen-xl 
+      px-6 md:px-10 lg:px-16 py-6
+      mx-auto
+      border-b"
+    >
+      <h1
+        className="text-3xl md:text-4xl lg:text-5xl 
+        font-semibold 
+        leading-6 md:leading-8 lg:leading-10
+        tracking-wider"
+      >
+        <Link to="/">
+          KONSTANTIN
+          <br />
+          KUZMIN
         </Link>
+      </h1>
 
-        <div className="hidden md:flex flex-col-reverse justify-center w-56">
-          <ul className="flex flex-row justify-around px-6">
-            <Social />
-          </ul>
-        </div>
+      <button
+        type="button"
+        className="icon-button sm:hidden"
+        onClick={() => setSidebarState(true)}
+      >
+        <svg viewBox={svg.menu.viewbox}>
+          <title>menu</title>
+          <path d={svg.menu.path} />
+        </svg>
+      </button>
 
-        <div className="flex flex-col justify-center md:hidden">
-          <a href="mailto:contact@konstantinkuzmin.com" className="icon-button">
-            <svg viewBox={svg.send.viewbox}>
-              <title>contact</title>
-              <path d={svg.send.path} />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <h4 className="block sm:hidden mt-1 mx-auto text-sm">
-        Software Developer, Composer, Minnesotan
-      </h4>
+      <nav
+        className="hidden sm:block flex-grow
+      max-w-sm md:max-w-md lg:max-w-lg
+      ml-12"
+      >
+        <ul className="flex flex-row justify-between">
+          {links
+            .filter((el) => el.name !== 'Home')
+            .map((el) => (
+              <li key={el.name}>
+                <Link
+                  className="font-kanit md:text-lg lg:text-xl"
+                  to={el.link}
+                  onClick={() => setSidebarState(false)}
+                >
+                  {el.name}
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </nav>
     </header>
   );
 }

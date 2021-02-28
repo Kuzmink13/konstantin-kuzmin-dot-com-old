@@ -10,8 +10,11 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply font-kanit text-3xl sm:text-5xl font-semibold leading-6 sm:leading-10 text-gray-900 tracking-wider;
+  h1,
+  h4,
+  h5,
+  h6 {
+    @apply font-kanit text-gray-900;
   }
   h2 {
     @apply font-kanit text-2xl sm:text-3xl font-semibold text-gray-900 tracking-wider;
@@ -19,14 +22,8 @@
   h3 {
     @apply font-kanit text-2xl font-semibold text-gray-900 tracking-wider;
   }
-  h4 {
-    @apply font-kanit text-gray-700;
-  }
   p {
     @apply font-roboto text-gray-900;
-  }
-  a {
-    @apply font-roboto text-gray-600 hover:text-gray-900;
   }
   svg {
     @apply fill-current;
