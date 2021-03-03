@@ -38,6 +38,6 @@
     @apply text-gray-600 hover:text-gray-900 h-5 w-5;
   }
   .new-focus {
-    @apply hover:bg-gray-200 focus:bg-gray-200 px-2 py-1 rounded-lg focus:outline-none;
+    @apply hover:bg-gray-100 focus-visible:bg-gray-100 px-2 py-1 rounded-lg focus:outline-none transition;
   }
 }

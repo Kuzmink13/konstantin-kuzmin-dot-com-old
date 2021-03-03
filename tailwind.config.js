@@ -12,6 +12,7 @@ module.exports = {
   variants: {
     extend: {
       visibility: ['group-hover', 'focus-within'],
+      backgroundColor: ['focus-visible'],
     },
   },
   plugins: [],
