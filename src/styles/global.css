@@ -14,13 +14,13 @@
   h4,
   h5,
   h6 {
-    @apply font-kanit text-gray-900;
+    @apply font-kanit;
   }
   h2 {
-    @apply font-kanit text-2xl sm:text-3xl font-semibold text-gray-900 tracking-wider;
+    @apply font-kanit text-2xl sm:text-3xl font-semibold tracking-wider;
   }
   h3 {
-    @apply font-kanit text-2xl font-semibold text-gray-900 tracking-wider;
+    @apply font-kanit text-2xl font-semibold tracking-wider;
   }
   p {
     @apply font-roboto text-gray-900;
@@ -31,13 +31,10 @@
 }
 
 @layer components {
-  .text-link {
-    @apply hover:underline hover:text-gray-900;
+  .hover-shadow {
+    @apply hover:bg-gray-100 rounded-lg transition;
   }
-  .icon-button {
-    @apply text-gray-600 hover:text-gray-900 h-5 w-5;
-  }
-  .new-focus {
-    @apply hover:bg-gray-100 focus-visible:bg-gray-100 px-2 py-1 rounded-lg focus:outline-none transition;
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 ring-gray-500 transition;
   }
 }

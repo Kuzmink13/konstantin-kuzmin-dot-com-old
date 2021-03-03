@@ -29,21 +29,22 @@ export default function Header({ setSidebarState }) {
       w-full max-w-screen-xl 
       px-6 md:px-10 lg:px-16 py-6
       mx-auto
-      border-b"
+      border-b
+      text-gray-700"
     >
-      <h1
-        className="text-3xl md:text-4xl lg:text-5xl 
-        w-40 md:w-48 lg:w-64
-        font-semibold 
-        leading-6 md:leading-8 lg:leading-10
-        tracking-wider"
-      >
-        <Link to="/">{site.siteMetadata.title}</Link>
-      </h1>
+      <Link className="w-44 md:w-52 lg:w-72 focus-ring" to="/">
+        <h1
+          className="text-3xl md:text-4xl lg:text-5xl 
+          font-semibold tracking-wider
+          leading-6 md:leading-8 lg:leading-10"
+        >
+          {site.siteMetadata.title}
+        </h1>
+      </Link>
 
       <button
         type="button"
-        className="icon-button sm:hidden"
+        className="hover-shadow focus-ring text-gray-600 hover:text-gray-800 h-9 w-9 p-2 sm:hidden"
         onClick={() => setSidebarState(true)}
       >
         <svg viewBox={svg.menu.viewbox}>
@@ -63,7 +64,7 @@ export default function Header({ setSidebarState }) {
         >
           {Navigation.filter((el) => el.name !== 'Home').map((el) => (
             <li key={el.name}>
-              <Link className="new-focus" to={el.ref}>
+              <Link className="hover-shadow focus-ring px-2 py-1 " to={el.ref}>
                 {el.name}
               </Link>
             </li>

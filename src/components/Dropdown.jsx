@@ -18,10 +18,10 @@ export default function Dropdown({ title, items }) {
 
   return (
     <>
-      <div className="group relative text-gray-900">
+      <div className="group relative">
         <button
           type="button"
-          className="new-focus"
+          className="hover-shadow focus-ring px-2 py-1 whitespace-nowrap"
           tabIndex="0"
           onKeyDown={handleKeyPress}
           onBlur={() => setTimeout(() => setOpen(false))}
@@ -43,7 +43,7 @@ export default function Dropdown({ title, items }) {
         >
           {items.map((el) => (
             <li key={el.name}>
-              <Link className="new-focus" to={el.ref}>
+              <Link className="hover-shadow focus-ring px-2 py-1 " to={el.ref}>
                 {el.name}
               </Link>
             </li>
