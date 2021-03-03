@@ -10,7 +10,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      visibility: ['group-hover', 'focus-within'],
+    },
   },
   plugins: [],
 };
