@@ -2,11 +2,16 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-export default [
-  { name: 'Home', link: '/' },
-  { name: 'About', link: '/about' },
-  { name: 'Content', link: '/more' },
-  { name: 'Projects', link: '/projects' },
-  { name: 'Resume', link: '/resume' },
-  { name: 'Contact', link: '/contact' },
+export const Navigation = [
+  { name: 'Home', ref: '/' },
+  { name: 'About', ref: '/about' },
+  { name: 'Contact', ref: '/contact' },
+  { name: 'Projects', ref: '/projects' },
+  { name: 'Resume', ref: '/resume' },
+];
+
+export const Content = [
+  { name: 'Blog', ref: '/blog' },
+  { name: 'Reviews', ref: '/reviews' },
+  { name: 'Music', ref: '/music' },
 ];
