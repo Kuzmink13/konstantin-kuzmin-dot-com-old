@@ -5,10 +5,10 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
-import Dropdown from './Dropdown';
-
-import { Content, Navigation } from '../data/links';
 import * as svg from '../data/svg.json';
+import Navbar from './Navbar';
+import Dropdown from './Dropdown';
+import { links } from '../data/links';
 
 const query = graphql`
   query {
@@ -20,7 +20,7 @@ const query = graphql`
   }
 `;
 
-export default function Header({ setSidebarState }) {
+export default function Header() {
   const { site } = useStaticQuery(query);
 
   return (
@@ -42,38 +42,17 @@ export default function Header({ setSidebarState }) {
         </h1>
       </Link>
 
-      <button
-        type="button"
-        className="hover-shadow focus-ring text-gray-600 hover:text-gray-800 h-9 w-9 p-2 sm:hidden"
-        onClick={() => setSidebarState(true)}
-      >
-        <svg viewBox={svg.menu.viewbox}>
+      <div className="sm:hidden font-kanit md:text-lg lg:text-xl">
+        <svg
+          className="hover-shadow focus-ring text-gray-600 hover:text-gray-800 h-9 w-9 p-2"
+          viewBox={svg.menu.viewbox}
+        >
           <title>menu</title>
           <path d={svg.menu.path} />
         </svg>
-      </button>
+      </div>
 
-      <nav
-        className="hidden sm:block flex-grow
-        max-w-sm md:max-w-md lg:max-w-lg
-        ml-12"
-      >
-        <ul
-          className="flex flex-row justify-between items-center
-          font-kanit md:text-lg lg:text-xl"
-        >
-          {Navigation.filter((el) => el.name !== 'Home').map((el) => (
-            <li key={el.name}>
-              <Link className="hover-shadow focus-ring px-2 py-1 " to={el.ref}>
-                {el.name}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Dropdown title="Content" items={Content} />
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
     </header>
   );
 }

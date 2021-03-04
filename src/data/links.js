@@ -2,16 +2,23 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-export const Navigation = [
-  { name: 'Home', ref: '/' },
-  { name: 'About', ref: '/about' },
-  { name: 'Contact', ref: '/contact' },
-  { name: 'Projects', ref: '/projects' },
-  { name: 'Resume', ref: '/resume' },
-];
+export const TYPES = {
+  LINK: 'LINK',
+  LIST: 'LIST',
+};
 
-export const Content = [
-  { name: 'Blog', ref: '/blog' },
-  { name: 'Reviews', ref: '/reviews' },
-  { name: 'Music', ref: '/music' },
+export const links = [
+  { name: 'About', type: TYPES.LINK, payload: '/about' },
+  { name: 'Contact', type: TYPES.LINK, payload: '/contact' },
+  { name: 'Projects', type: TYPES.LINK, payload: '/projects' },
+  { name: 'Resume', type: TYPES.LINK, payload: '/resume' },
+  {
+    name: 'Content',
+    type: TYPES.LIST,
+    payload: [
+      { name: 'Blog', type: TYPES.LINK, payload: '/blog' },
+      { name: 'Reviews', type: TYPES.LINK, payload: '/reviews' },
+      { name: 'Music', type: TYPES.LINK, payload: '/music' },
+    ],
+  },
 ];
