@@ -12,7 +12,9 @@ export default function Project({ project, flip = false }) {
       } justify-between pb-8 md:pb-0`}
     >
       <div className="flex flex-col justify-center w-80 mx-auto md:w-full p-2 md:p-4">
-        <h3>{project.title}</h3>
+        <h3 className="text-2xl font-semibold tracking-wider">
+          {project.title}
+        </h3>
         <p>{project.description}</p>
         <ul className="flex flex-row justify-center space-x-8 mt-3">
           {project.links.map((link) => (

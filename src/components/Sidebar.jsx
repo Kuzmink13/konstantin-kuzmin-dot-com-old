@@ -52,7 +52,9 @@ export default function Sidebar({ setSidebarState }) {
         id="sidebar"
         className="md:hidden fixed w-0 h-full bg-white transition-all duration-250 py-12 overflow-hidden"
       >
-        <h3 className="text-center py-3">Navigation</h3>
+        <h3 className="text-center py-3 text-2xl font-semibold tracking-wider">
+          Navigation
+        </h3>
         <ul className="border-t border-b flex flex-col justify-around mx-8 py-3 space-y-3 text-center">
           <Links {...{ setSidebarState }} showHome />
         </ul>

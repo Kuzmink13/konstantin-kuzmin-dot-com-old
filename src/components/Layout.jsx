@@ -11,7 +11,7 @@ import Footer from './Footer';
 export default function Layout({ children }) {
   const [sidebarState, setSidebarState] = useState(false);
   return (
-    <div className="h-screen w-screen overflow-y-scroll flex flex-col justify-between">
+    <div className="h-screen w-screen overflow-y-scroll flex flex-col justify-between text-gray-800">
       {/* <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="./favicon.ico" />

@@ -11,19 +11,15 @@
 
 @layer base {
   h1,
+  h2,
+  h3,
   h4,
   h5,
   h6 {
     @apply font-kanit;
   }
-  h2 {
-    @apply font-kanit text-2xl sm:text-3xl font-semibold tracking-wider;
-  }
-  h3 {
-    @apply font-kanit text-2xl font-semibold tracking-wider;
-  }
   p {
-    @apply font-roboto text-gray-900;
+    @apply font-roboto;
   }
   svg {
     @apply fill-current;
