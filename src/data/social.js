@@ -2,25 +2,36 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import * as svg from './svg.json';
+import React from 'react';
+import MailIcon from '../svg/envelope.svg';
+import LinkedinIcon from '../svg/linkedin.svg';
+import GithubIcon from '../svg/github.svg';
+import TwitterIcon from '../svg/twitter.svg';
 
 export const social = [
   {
     name: 'email',
-    svg: svg.send,
+    svg: <MailIcon />,
     link: 'mailto:contact@konstantinkuzmin.com',
     target: '',
   },
   {
     name: 'linkedin',
-    svg: svg.linkedin,
+    svg: <LinkedinIcon />,
     link: 'https://www.linkedin.com/in/kuzmink13',
+    target: '_',
   },
-  { name: 'github', svg: svg.github, link: 'https://www.github.com/Kuzmink13' },
+  {
+    name: 'github',
+    svg: <GithubIcon />,
+    link: 'https://www.github.com/Kuzmink13',
+    target: '_',
+  },
   {
     name: 'twitter',
-    svg: svg.twitter,
+    svg: <TwitterIcon />,
     link: 'https://www.twitter.com/kuzmink13',
+    target: '_',
   },
   // { name: 'instagram', svg: svg.instagram, link: '' },
   // { name: 'medium', svg: svg.medium, link: '' },

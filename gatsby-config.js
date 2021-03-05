@@ -4,5 +4,15 @@ module.exports = {
     author: 'Konstantin Kuzmin',
     copyright: '2021',
   },
-  plugins: ['gatsby-plugin-postcss'],
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svg/, // See below to configure properly
+        },
+      },
+    },
+    'gatsby-plugin-postcss',
+  ],
 };
