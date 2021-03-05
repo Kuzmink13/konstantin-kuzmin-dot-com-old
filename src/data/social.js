@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+
 import MailIcon from '../svg/envelope.svg';
 import LinkedinIcon from '../svg/linkedin.svg';
 import GithubIcon from '../svg/github.svg';

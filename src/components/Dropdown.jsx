@@ -5,15 +5,10 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
+import { onKeyboardSelection } from '../logic/utilities';
+
 export default function Dropdown({ children, items }) {
   const [open, setOpen] = useState(false);
-
-  const handleKeyPress = (event) => {
-    if (event.key === ' ' || event.key === 'Enter') {
-      event.preventDefault();
-      setOpen(!open);
-    }
-  };
 
   return (
     <div className="group relative">
@@ -21,7 +16,7 @@ export default function Dropdown({ children, items }) {
         role="menuitem"
         className="flex hover-shadow focus-ring whitespace-nowrap cursor-pointer"
         tabIndex="0"
-        onKeyDown={handleKeyPress}
+        onKeyDown={(event) => onKeyboardSelection(event, () => setOpen(!open))}
         onBlur={() => setTimeout(() => setOpen(false))}
       >
         {children}
