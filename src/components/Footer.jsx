@@ -25,7 +25,7 @@ export default function Footer() {
     <footer className="bg-gray-100 w-full pt-8 pb-8">
       <SocialBar />
       <p
-        className="font-kanit text-gray-600 text-center 
+        className="font-kanit text-gray-700 text-center 
         text-xs font-medium tracking-wide uppercase"
       >
         &copy; {site.siteMetadata.copyright} &middot; {site.siteMetadata.author}{' '}
