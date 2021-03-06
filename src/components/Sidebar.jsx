@@ -10,9 +10,20 @@ import { TitleBlock } from './Header';
 import { linksFlat as items } from '../data/links';
 import { SIDEBAR_ANIMATION_DURATION } from '../data/constants';
 
-import { onLeaveTree } from '../logic/utilities';
+import { onEscape, onLeaveTree } from '../logic/utilities';
 
 export default function Sidebar({ isOpen, close }) {
+  // SET GLOBAL KEYBOARD LISTENERS
+  useEffect(() => {
+    const fn = (e) => onEscape(e, close);
+    if (isOpen) {
+      document.addEventListener('keydown', fn);
+    } else {
+      document.removeEventListener('keydown', fn);
+    }
+  }, [isOpen, close]);
+
+  // SET OPEN/CLOSE ANIMATION
   useEffect(() => {
     const group = document.getElementById('group');
     const sidebar = document.getElementById('sidebar');
@@ -33,6 +44,7 @@ export default function Sidebar({ isOpen, close }) {
     }
   }, [isOpen]);
 
+  // RENDER
   return (
     <div id="group" className="absolute invisible">
       <DimmedBackground close={close} />

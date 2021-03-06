@@ -9,6 +9,13 @@ export function onKeyboardSelection(event, fn) {
   }
 }
 
+export function onEscape(event, fn) {
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    fn();
+  }
+}
+
 export function onLeaveTree(event, fn) {
   const wrapper = document.getElementById('gatsby-focus-wrapper');
   if (event.relatedTarget === null) return;
