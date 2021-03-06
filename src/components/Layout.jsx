@@ -8,16 +8,23 @@ import Header from './Header';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
+import useDelayUnmount from '../hooks/useDelayUnmount';
+
+const animationDelay = 150;
+
 export default function Layout({ children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebar, setSidebarState] = useState(false);
+  const shouldRender = useDelayUnmount(sidebar, animationDelay);
 
   return (
     <div
       className="flex flex-col justify-between
       h-screen w-screen overflow-y-scroll"
     >
-      <Header toggle={() => setSidebarOpen(!sidebarOpen)} />
-      {sidebarOpen && <Sidebar close={() => setSidebarOpen(false)} />}
+      <Header toggle={() => setSidebarState(!sidebar)} />
+      {shouldRender && (
+        <Sidebar isOpen={sidebar} close={() => setSidebarState(false)} />
+      )}
       <div className="flex flex-col flex-grow">{children}</div>
       <Footer />
     </div>
