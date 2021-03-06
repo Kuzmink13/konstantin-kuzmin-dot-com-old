@@ -8,13 +8,13 @@ import Header from './Header';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
-import useDelayUnmount from '../hooks/useDelayUnmount';
+import { SIDEBAR_ANIMATION_DURATION as delay } from '../data/constants';
 
-const animationDelay = 150;
+import useDelayUnmount from '../hooks/useDelayUnmount';
 
 export default function Layout({ children }) {
   const [sidebar, setSidebarState] = useState(false);
-  const shouldRender = useDelayUnmount(sidebar, animationDelay);
+  const shouldRender = useDelayUnmount(sidebar, delay);
 
   return (
     <div
