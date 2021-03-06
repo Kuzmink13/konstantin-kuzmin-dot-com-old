@@ -40,17 +40,23 @@ export function SocialBar() {
     <ul className="flex justify-center space-x-6 mb-4">
       {social.map((el) => (
         <li key={el.name}>
-          <SocialIcon svg={el.svg} link={el.link} target={el.target} />
+          <SocialIcon
+            name={el.name}
+            svg={el.svg}
+            link={el.link}
+            target={el.target}
+          />
         </li>
       ))}
     </ul>
   );
 }
 
-export function SocialIcon({ svg, link, target }) {
+export function SocialIcon({ name, svg, link, target }) {
   return (
     <a
       href={link}
+      title={name}
       className="block focus-ring rounded-lg
       text-gray-500 hover:text-gray-700
       h-9 w-9 p-2"
