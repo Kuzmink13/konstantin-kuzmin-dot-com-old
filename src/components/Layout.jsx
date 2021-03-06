@@ -13,10 +13,7 @@ export default function Layout({ children }) {
   const close = useCallback(() => setSidebarState(false), [setSidebarState]);
 
   return (
-    <div
-      className="flex flex-col justify-between
-      h-screen w-screen"
-    >
+    <div className="flex flex-col justify-between h-screen">
       <Header toggle={() => setSidebarState(!sidebar)} close={close} />
       <Sidebar isOpen={sidebar} close={close} />
       <div className="flex flex-col flex-grow">{children}</div>
