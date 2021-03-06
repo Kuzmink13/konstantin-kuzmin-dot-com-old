@@ -2,7 +2,7 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 import { TitleBlock } from './Header';
@@ -14,17 +14,21 @@ import { onArrows, onEscape, onLeaveTree } from '../logic/utilities';
 
 export default function Sidebar({ isOpen, close }) {
   // SET GLOBAL KEYBOARD LISTENERS
+  const keyfns = useCallback(
+    (e) => {
+      onEscape(e, close);
+      onArrows(e);
+    },
+    [close]
+  );
+
   useEffect(() => {
-    const esc = (e) => onEscape(e, close);
-    const arrow = (e) => onArrows(e);
     if (isOpen) {
-      document.addEventListener('keydown', esc);
-      document.addEventListener('keydown', arrow);
+      document.addEventListener('keydown', keyfns);
     } else {
-      document.removeEventListener('keydown', esc);
-      document.removeEventListener('keydown', arrow);
+      document.removeEventListener('keydown', keyfns);
     }
-  }, [isOpen, close]);
+  }, [keyfns, isOpen]);
 
   // SET OPEN/CLOSE ANIMATION
   useEffect(() => {
