@@ -10,16 +10,19 @@ import { TitleBlock } from './Header';
 import { linksFlat as items } from '../data/links';
 import { SIDEBAR_ANIMATION_DURATION } from '../data/constants';
 
-import { onEscape, onLeaveTree } from '../logic/utilities';
+import { onArrows, onEscape, onLeaveTree } from '../logic/utilities';
 
 export default function Sidebar({ isOpen, close }) {
   // SET GLOBAL KEYBOARD LISTENERS
   useEffect(() => {
-    const fn = (e) => onEscape(e, close);
+    const esc = (e) => onEscape(e, close);
+    const arrow = (e) => onArrows(e);
     if (isOpen) {
-      document.addEventListener('keydown', fn);
+      document.addEventListener('keydown', esc);
+      document.addEventListener('keydown', arrow);
     } else {
-      document.removeEventListener('keydown', fn);
+      document.removeEventListener('keydown', esc);
+      document.removeEventListener('keydown', arrow);
     }
   }, [isOpen, close]);
 

@@ -16,6 +16,20 @@ export function onEscape(event, fn) {
   }
 }
 
+export function onArrows(event, fn = () => {}) {
+  const arrows = ['ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowUp'];
+
+  const isArrow = arrows.reduce(
+    (prev, curr) => prev || curr === event.key,
+    false
+  );
+
+  if (isArrow) {
+    event.preventDefault();
+    fn();
+  }
+}
+
 export function onLeaveTree(event, fn) {
   const wrapper = document.getElementById('gatsby-focus-wrapper');
   if (event.relatedTarget === null) return;
