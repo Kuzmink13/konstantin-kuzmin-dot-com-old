@@ -21,6 +21,7 @@ export default function Sidebar({ isOpen, close }) {
       background.classList.replace('opacity-0', 'opacity-20');
     } else {
       sidebar.classList.replace('w-60', 'w-0');
+      background.classList.replace('ease-out', 'ease-in');
       background.classList.replace('opacity-20', 'opacity-0');
     }
   }, [isOpen]);
