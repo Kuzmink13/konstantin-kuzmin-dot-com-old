@@ -67,3 +67,5 @@ export const links = [
     ],
   },
 ];
+
+export const linksFlat = [...links.slice(0, 4), ...links[4].payload];

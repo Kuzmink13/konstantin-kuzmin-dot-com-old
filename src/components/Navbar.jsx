@@ -7,8 +7,9 @@ import { Link } from 'gatsby';
 
 import Dropdown from './Dropdown';
 
-import DownIcon from '../svg/cheveron-down.svg';
 import { links, TYPES } from '../data/links';
+
+import DownIcon from '../svg/cheveron-down.svg';
 
 export default function Navbar() {
   return (

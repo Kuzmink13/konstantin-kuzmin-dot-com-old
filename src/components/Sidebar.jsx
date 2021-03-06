@@ -7,10 +7,9 @@ import { Link } from 'gatsby';
 
 import { TitleBlock } from './Header';
 
-import { links } from '../data/links';
-import { onLeaveTree } from '../logic/utilities';
+import { linksFlat as items } from '../data/links';
 
-const items = [...links.slice(0, 4), ...links[4].payload];
+import { onLeaveTree } from '../logic/utilities';
 
 export default function Sidebar({ close }) {
   return (
