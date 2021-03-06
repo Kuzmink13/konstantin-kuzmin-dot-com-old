@@ -11,6 +11,7 @@ export function onKeyboardSelection(event, fn) {
 
 export function onLeaveTree(event, fn) {
   const wrapper = document.getElementById('gatsby-focus-wrapper');
+  if (event.relatedTarget === null) return;
   if (event.relatedTarget === wrapper) return;
   if (event.currentTarget.contains(event.relatedTarget)) return;
   fn();
@@ -18,6 +19,7 @@ export function onLeaveTree(event, fn) {
 
 export function onWrongDestination(event, expected, fn) {
   const wrapper = document.getElementById('gatsby-focus-wrapper');
+  if (event.relatedTarget === null) return;
   if (event.relatedTarget === wrapper) return;
   if (expected?.contains(event.relatedTarget)) return;
   expected && fn();
