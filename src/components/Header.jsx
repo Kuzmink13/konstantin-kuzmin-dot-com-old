@@ -21,7 +21,7 @@ const query = graphql`
   }
 `;
 
-export default function Header({ toggle }) {
+export default function Header({ toggle, close }) {
   const { site } = useStaticQuery(query);
 
   return (
@@ -33,7 +33,7 @@ export default function Header({ toggle }) {
       border-b"
     >
       <TitleBlock title={site.siteMetadata.title} />
-      <SidebarButton toggle={toggle} />
+      <SidebarButton toggle={toggle} close={close} />
       <Navbar />
     </header>
   );
@@ -53,7 +53,7 @@ export function TitleBlock({ title }) {
   );
 }
 
-export function SidebarButton({ toggle }) {
+export function SidebarButton({ toggle, close }) {
   return (
     <MenuIcon
       tabIndex="0"
@@ -63,7 +63,7 @@ export function SidebarButton({ toggle }) {
       onClick={toggle}
       onKeyDown={(e) => onKeyboardSelection(e, toggle)}
       onBlur={(e) =>
-        onWrongDestination(e, document.getElementById('sidebar'), toggle)
+        onWrongDestination(e, document.getElementById('sidebar'), close)
       }
     />
   );

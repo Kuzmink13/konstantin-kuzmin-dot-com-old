@@ -8,26 +8,33 @@ import { Link } from 'gatsby';
 import { TitleBlock } from './Header';
 
 import { linksFlat as items } from '../data/links';
+import { SIDEBAR_ANIMATION_DURATION } from '../data/constants';
 
 import { onLeaveTree } from '../logic/utilities';
 
 export default function Sidebar({ isOpen, close }) {
   useEffect(() => {
+    const group = document.getElementById('group');
     const sidebar = document.getElementById('sidebar');
     const background = document.getElementById('dimmed-background');
-
     if (isOpen) {
+      group.classList.replace('invisible', 'visible');
       sidebar.classList.replace('w-0', 'w-60');
+      background.classList.replace('ease-in', 'ease-out');
       background.classList.replace('opacity-0', 'opacity-20');
     } else {
       sidebar.classList.replace('w-60', 'w-0');
       background.classList.replace('ease-out', 'ease-in');
       background.classList.replace('opacity-20', 'opacity-0');
+      setTimeout(
+        () => group.classList.replace('visible', 'invisible'),
+        SIDEBAR_ANIMATION_DURATION
+      );
     }
   }, [isOpen]);
 
   return (
-    <>
+    <div id="group" className="absolute invisible">
       <DimmedBackground close={close} />
       <div
         id="sidebar"
@@ -40,7 +47,7 @@ export default function Sidebar({ isOpen, close }) {
         <TitleBlock title="Konstantin Kuzmin" />
         <SidebarList />
       </div>
-    </>
+    </div>
   );
 }
 
