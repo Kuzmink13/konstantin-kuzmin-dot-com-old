@@ -9,7 +9,7 @@ import Project from '../components/Project';
 
 import myProjects from '../data/myProjects';
 
-export default function projects() {
+export default function Projects() {
   return (
     <Layout>
       <div className="w-full max-w-screen-md mx-auto">

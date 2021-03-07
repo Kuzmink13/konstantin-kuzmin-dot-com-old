@@ -5,6 +5,6 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 
-export default function resume() {
+export default function Resume() {
   return <Layout>Resume</Layout>;
 }

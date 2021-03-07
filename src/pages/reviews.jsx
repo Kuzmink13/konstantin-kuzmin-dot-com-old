@@ -6,6 +6,6 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 
-export default function reviews() {
+export default function Reviews() {
   return <Layout>reviews</Layout>;
 }

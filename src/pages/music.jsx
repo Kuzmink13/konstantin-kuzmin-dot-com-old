@@ -6,6 +6,6 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 
-export default function music() {
+export default function Music() {
   return <Layout>music</Layout>;
 }
