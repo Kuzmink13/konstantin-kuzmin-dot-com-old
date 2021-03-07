@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
+ */
+
 module.exports = {
   siteMetadata: {
     title: 'Konstantin Kuzmin',
@@ -16,7 +20,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /svg/, // See below to configure properly
+          include: /svg/,
         },
       },
     },

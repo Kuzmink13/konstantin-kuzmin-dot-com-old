@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
+ */
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
