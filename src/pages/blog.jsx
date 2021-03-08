@@ -66,7 +66,9 @@ function BlogPostLink({ post }) {
       >
         {post.title}
       </h3>
-      <h4 className="lg:text-lg text-gray-500">{post.publicationDate}</h4>
+      <p className="lg:text-lg font-kanit text-gray-500">
+        {post.publicationDate}
+      </p>
       <p
         className="lg:text-lg text-gray-800
         pt-1 lg:pt-2"
