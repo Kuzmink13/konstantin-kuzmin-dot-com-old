@@ -16,7 +16,13 @@ export default function Layout({ children }) {
     <div className="flex flex-col justify-between h-screen">
       <Header toggle={() => setSidebarState(!sidebar)} close={close} />
       <Sidebar isOpen={sidebar} close={close} />
-      <div className="flex flex-col flex-grow">{children}</div>
+      <main
+        className="flex-grow w-full max-w-screen-xl 
+        px-6 md:px-10 lg:px-16 mx-auto
+        py-6 md:py-8 lg:py-10"
+      >
+        {children}
+      </main>
       <Footer />
     </div>
   );
