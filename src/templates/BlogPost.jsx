@@ -14,6 +14,7 @@ import {
   Heading4,
   HyperLInk,
   Text,
+  Image,
 } from '../components/Markdown';
 
 import Arrow from '../svg/arrow-thin-left.svg';
@@ -39,10 +40,11 @@ function ReturnButton() {
       <Link
         className="flex items-center flex-shrink
         hover-shadow focus-ring whitespace-nowrap
-        text-gray-500 px-2 py-1"
+        text-gray-500 hover:text-gray-800
+        px-2 py-1"
         to="/blog"
       >
-        <Arrow className="w-3 h-3 mr-2" />
+        <Arrow className="w-4 h-4 mr-2" />
         <p className="font-kanit md:text-lg flex-shrink">Back</p>
       </Link>
     </div>
@@ -75,6 +77,7 @@ function BlogContent({ content }) {
       [BLOCKS.HEADING_4]: (node, children) => <Heading4>{children}</Heading4>,
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.HR]: () => <Break />,
+      [BLOCKS.EMBEDDED_ASSET]: (node) => <Image id={node.data.target.sys.id} />,
       [INLINES.HYPERLINK]: (node, children) => (
         <HyperLInk data={node.data}>{children}</HyperLInk>
       ),

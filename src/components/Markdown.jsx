@@ -3,6 +3,9 @@
  */
 
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+
+import useAssetById from '../hooks/useAssetById';
 
 export const Text = ({ children }) => (
   <p
@@ -44,5 +47,17 @@ export const HyperLInk = ({ children, data }) => (
     {children}
   </a>
 );
+
+export const Image = ({ id }) => {
+  const [image, title] = useAssetById(id);
+  return (
+    <div
+      className="flex justify-center
+      pb-4 md:pb-5 lg:pb-6"
+    >
+      <GatsbyImage image={image} alt={title} />
+    </div>
+  );
+};
 
 export const Break = () => <hr className="pb-4 md:pb-5 lg:pb-6" />;
