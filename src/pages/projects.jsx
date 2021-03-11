@@ -60,7 +60,7 @@ function ProjectList() {
   return (
     <div
       className="flex flex-row justify-evenly flex-wrap
-      py-2 md:py-4 lg:py-6"
+      py-1 md:py-3 lg:py-5"
     >
       {allContentfulProject.edges.map((project) => (
         <ProjectCard key={project.node.title} data={project.node} />
@@ -74,7 +74,7 @@ function ProjectCard({ data }) {
   return (
     <div
       className="flex flex-col overflow-hidden
-      w-96 md:w-80 lg:w-96 m-3
+      w-96 md:w-80 lg:w-96 mx-3 my-6
       border rounded-lg shadow-lg"
     >
       <GatsbyImage image={image} alt={data.image.title} />
