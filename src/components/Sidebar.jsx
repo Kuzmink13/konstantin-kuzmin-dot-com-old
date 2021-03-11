@@ -77,7 +77,7 @@ export function DimmedBackground({ close }) {
       role="none"
       onClick={close}
       className="fixed sm:hidden inset-0
-      bg-gray-900 opacity-0
+      bg-gray-900 opacity-0 z-10
       transition ease-out"
     />
   );
