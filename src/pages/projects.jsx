@@ -24,11 +24,7 @@ const query = graphql`
           }
           image {
             title
-            gatsbyImageData(
-              width: 384
-              aspectRatio: 1.77777
-              formats: [AUTO, WEBP]
-            )
+            gatsbyImageData(aspectRatio: 1.77777, formats: [AUTO, WEBP])
           }
         }
       }
@@ -78,7 +74,7 @@ function ProjectCard({ data }) {
         >
           {data.title}
         </h3>
-        <p className="py-1 text-gray-800 lg:text-lg">
+        <p className="my-1 text-gray-800 lg:text-lg h-24 lg:h-28 overflow-auto">
           {data.description.description}
         </p>
         <ProjectLinks data={data} />
