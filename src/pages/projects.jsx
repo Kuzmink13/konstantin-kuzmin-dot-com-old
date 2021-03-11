@@ -72,16 +72,27 @@ function ProjectList() {
 function ProjectCard({ data }) {
   const image = getImage(data.image);
   return (
-    <div className="w-96 md:w-80 lg:w-96 m-3 border rounded-lg overflow-hidden shadow-lg">
+    <div
+      className="flex flex-col overflow-hidden
+      w-96 md:w-80 lg:w-96 m-3
+      border rounded-lg shadow-lg"
+    >
       <GatsbyImage image={image} alt={data.image.title} />
-      <div className="relative flex flex-col items-center pt-5 pb-2 px-2">
+      <div
+        className="relative flex flex-col flex-grow items-center
+        pt-5 pb-2 px-2"
+      >
         <h3
-          className="absolute -top-6 text-2xl bg-white border shadow-md rounded-lg
-        text-gray-700 font-semibold tracking-wider px-2"
+          className="absolute -top-5 px-2
+          bg-white border shadow-md rounded-lg
+          text-gray-700 text-2xl font-semibold tracking-wider"
         >
           {data.title}
         </h3>
-        <p className="my-1 text-gray-800 lg:text-lg h-24 lg:h-28 overflow-auto">
+        <p
+          className="flex-grow overflow-auto my-1 
+          text-gray-800 lg:text-lg max-h-24 lg:max-h-28"
+        >
           {data.description.description}
         </p>
         <TechnologyList technologies={data.technologies} />
@@ -93,7 +104,7 @@ function ProjectCard({ data }) {
 
 function ProjectLinks({ data }) {
   return (
-    <div className="w-full flex flex-row justify-evenly font-kanit">
+    <div className="flex flex-row justify-evenly font-kanit w-full">
       <Link link={data.projectLink} text="Visit Project">
         <ProjectLinkIcon className="w-4 h-4 mr-2" />
       </Link>
@@ -122,7 +133,7 @@ function Link({ link, children, text }) {
 
 function TechnologyList({ technologies }) {
   return (
-    <div className="flex flex-row justify-center space-x-4 py-2">
+    <div className="flex flex-row justify-center space-x-5 py-3">
       {technologies.map((el) => (
         <img
           className="h-8"
