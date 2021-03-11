@@ -129,6 +129,7 @@ function TechnologyList({ technologies }) {
           key={el.title}
           src={el.file.url}
           alt={el.description}
+          title={el.description}
         />
       ))}
     </div>
