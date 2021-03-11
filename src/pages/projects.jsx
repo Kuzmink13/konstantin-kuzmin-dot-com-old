@@ -27,6 +27,7 @@ const query = graphql`
             gatsbyImageData(aspectRatio: 1.77777, formats: [AUTO, WEBP])
           }
           technologies {
+            title
             description
             file {
               url
@@ -123,7 +124,12 @@ function TechnologyList({ technologies }) {
   return (
     <div className="flex flex-row justify-center space-x-4 py-2">
       {technologies.map((el) => (
-        <img className="h-8" src={el.file.url} alt={el.description} />
+        <img
+          className="h-8"
+          key={el.title}
+          src={el.file.url}
+          alt={el.description}
+        />
       ))}
     </div>
   );
