@@ -26,6 +26,12 @@ const query = graphql`
             title
             gatsbyImageData(aspectRatio: 1.77777, formats: [AUTO, WEBP])
           }
+          technologies {
+            description
+            file {
+              url
+            }
+          }
         }
       }
     }
@@ -77,6 +83,7 @@ function ProjectCard({ data }) {
         <p className="my-1 text-gray-800 lg:text-lg h-24 lg:h-28 overflow-auto">
           {data.description.description}
         </p>
+        <TechnologyList technologies={data.technologies} />
         <ProjectLinks data={data} />
       </div>
     </div>
@@ -109,5 +116,15 @@ function Link({ link, children, text }) {
       {children}
       <p className="font-kanit">{text}</p>
     </a>
+  );
+}
+
+function TechnologyList({ technologies }) {
+  return (
+    <div className="flex flex-row justify-center space-x-4 py-2">
+      {technologies.map((el) => (
+        <img className="h-8" src={el.file.url} alt={el.description} />
+      ))}
+    </div>
   );
 }
