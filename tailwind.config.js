@@ -15,6 +15,9 @@ module.exports = {
   },
   variants: {
     extend: {
+      boxShadow: ['active'],
+      translate: ['active'],
+      backgroundColor: ['active'],
       visibility: ['group-hover', 'focus-within'],
       ringWidth: ['focus-visible'],
     },

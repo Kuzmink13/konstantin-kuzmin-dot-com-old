@@ -33,4 +33,14 @@
   .focus-ring {
     @apply focus:outline-none focus-visible:ring-2 ring-gray-500 transition;
   }
+  .focus-ring-blue {
+    @apply focus-ring ring-blue-600 ring-offset-2;
+  }
+  .btn {
+    @apply focus-ring-blue rounded-lg
+    bg-blue-600 hover:bg-blue-500 active:bg-blue-700
+    shadow-md hover:shadow-lg active:shadow-md
+    transform hover:-translate-y-0.5 active:translate-y-0.5
+    px-4 md:px-5 py-1;
+  }
 }
