@@ -3,8 +3,20 @@
  */
 
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/Layout';
+
+const query = graphql`
+  query {
+    contentfulPageContent(slug: { eq: "contact" }) {
+      pageTitle
+      pageDescription {
+        pageDescription
+      }
+    }
+  }
+`;
 
 export default function Contact() {
   return (
@@ -18,6 +30,7 @@ export default function Contact() {
 }
 
 function ContactHeader() {
+  const { contentfulPageContent } = useStaticQuery(query);
   return (
     <hgroup
       className="flex flex-col lg:col-span-2 justify-center items-center
@@ -27,7 +40,7 @@ function ContactHeader() {
         className="text-3xl md:text-4xl lg:text-5xl
         text-gray-700 font-semibold tracking-wider"
       >
-        Contact
+        {contentfulPageContent.pageTitle}
       </h2>
       <p
         className="text-md md:text-lg lg:text-xl
@@ -35,9 +48,7 @@ function ContactHeader() {
         py-2 md:py-3 lg:py-4
         max-w-xs md:max-w-sm"
       >
-        Hey! Feel free to reach out to me with your questions, thoughts,
-        concerns, complaints or anything else you think I should be aware of.
-        I'm always open to starting a conversation!
+        {contentfulPageContent.pageDescription.pageDescription}
       </p>
     </hgroup>
   );
