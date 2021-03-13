@@ -8,14 +8,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 import Layout from '../components/Layout';
-import {
-  Break,
-  Heading3,
-  Heading4,
-  HyperLInk,
-  Text,
-  Image,
-} from '../components/Markdown';
+import { Break, Heading3, Heading4, HyperLInk, Text, Image } from './Markdown';
 
 import Arrow from '../svg/arrow-thin-left.svg';
 
