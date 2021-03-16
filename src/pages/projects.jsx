@@ -42,7 +42,7 @@ const query = graphql`
 export default function Projects() {
   return (
     <Layout>
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <h2
           className="text-2xl md:text-3xl lg:text-4xl
           text-gray-700 font-semibold tracking-wider px-2"
