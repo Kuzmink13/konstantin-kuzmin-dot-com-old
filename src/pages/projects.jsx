@@ -7,12 +7,19 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
+import PageHeader from '../components/PageHeader';
 
 import ProjectLinkIcon from '../svg/link.svg';
 import GithubLInkIcon from '../svg/github.svg';
 
 const query = graphql`
   query {
+    contentfulPageContent(slug: { eq: "projects" }) {
+      pageTitle
+      pageDescription {
+        pageDescription
+      }
+    }
     allContentfulProject {
       edges {
         node {
@@ -40,29 +47,27 @@ const query = graphql`
 `;
 
 export default function Projects() {
+  const { contentfulPageContent, allContentfulProject } = useStaticQuery(query);
   return (
     <Layout>
       <div className="max-w-screen-xl mx-auto">
-        <h2
-          className="text-2xl md:text-3xl lg:text-4xl
-          text-gray-700 font-semibold tracking-wider px-2"
-        >
-          Projects
-        </h2>
-        <ProjectList />
+        <PageHeader
+          title={contentfulPageContent.pageTitle}
+          description={contentfulPageContent.pageDescription.pageDescription}
+        />
+        <ProjectList projects={allContentfulProject} />
       </div>
     </Layout>
   );
 }
 
-function ProjectList() {
-  const { allContentfulProject } = useStaticQuery(query);
+function ProjectList({ projects }) {
   return (
     <div
       className="flex flex-row justify-evenly flex-wrap
       py-1 md:py-3 lg:py-5"
     >
-      {allContentfulProject.edges.map((project) => (
+      {projects.edges.map((project) => (
         <ProjectCard key={project.node.title} data={project.node} />
       ))}
     </div>
@@ -90,8 +95,9 @@ function ProjectCard({ data }) {
           {data.title}
         </h3>
         <p
-          className="flex-grow overflow-auto my-1 
-          text-gray-800 lg:text-lg max-h-24 lg:max-h-28"
+          className="flex-grow overflow-auto my-2 px-2 
+          text-gray-800 lg:text-lg max-h-24 lg:max-h-28
+          leading-tight md:leading-tight lg:leading-tight"
         >
           {data.description.description}
         </p>

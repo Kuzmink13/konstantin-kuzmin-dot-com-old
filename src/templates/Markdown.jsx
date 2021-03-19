@@ -9,8 +9,8 @@ import useAssetById from '../hooks/useAssetById';
 
 export const Text = ({ children }) => (
   <p
-    className="md:text-lg lg:text-xl
-    text-gray-800 leading-relaxed
+    className="md:text-lg lg:text-xl text-gray-800 
+    leading-normal md:leading-normal lg:leading-normal
     pb-4 md:pb-5 lg:pb-6"
   >
     {children}

@@ -66,8 +66,7 @@ function ReviewCard({ review }) {
     <div
       className="flex flex-col items-center
       w-96 md:w-80 lg:w-96 p-2
-      md:mx-3 lg:mx-4
-      my-3 md:my-4 lg:my-5
+      mx-3 my-6
       border rounded-lg shadow-lg"
     >
       <h3
@@ -82,7 +81,7 @@ function ReviewCard({ review }) {
       <p
         className="flex-grow overflow-auto
         lg:text-lg text-gray-800 leading-tight lg:leading-tight
-        h-20 md:h-24 lg:h-28 m-2"
+        max-h-20 md:max-h-24 lg:max-h-28 my-2 px-2"
       >
         {review.reviewBody.internal.content}
       </p>

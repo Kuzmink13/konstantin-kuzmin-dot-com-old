@@ -44,7 +44,7 @@ function ContactHeader() {
       </h2>
       <p
         className="text-md md:text-lg lg:text-xl
-        text-gray-800 leading-tight
+        text-gray-800 leading-tight md:leading-tight lg:leading-snug
         py-2 md:py-3 lg:py-4
         max-w-xs md:max-w-sm"
       >

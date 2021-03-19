@@ -20,7 +20,7 @@ export default function PageHeader({ title, description }) {
         className="text-md md:text-lg lg:text-xl text-gray-800
         leading-tight md:leading-snug lg:leading-snug
         pt-1 md:pt-2 lg:pt-3
-        pb-6 md:pb-7 lg:pb-8"
+        pb-4 md:pb-5 lg:pb-6"
       >
         {description}
       </p>
