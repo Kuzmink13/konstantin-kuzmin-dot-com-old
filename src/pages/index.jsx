@@ -3,44 +3,171 @@
  */
 
 import React from 'react';
-
-import HeroImage from '../assets/backpack_grayscale_sm.jpg';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 
 export default function Home() {
   return (
     <Layout>
-      <img
-        className="max-h-96 mx-auto my-3"
-        alt="Konstantin on a hike"
-        src={HeroImage}
-      />
-      <div className="sm:leading-relaxed max-w-lg mx-auto p-6 mb-8">
-        <p className="pb-3">
-          <strong>Hey, I’m Konstantin.</strong> I got started in software
-          development by auditing free MIT courses while quarantining during the
-          covid-19 pandemic. Since then, I’ve finished my first major web
-          project and am now looking to get into the industry so I can continue
-          to build my skill set and meet my personal and professional goals.
-        </p>
-        <p className="pb-3">
-          My formal training is in mechanical engineering, but I decided to make
-          a change after spending three years working in the medical device
-          industry. I was drawn to tech by the community and its love for
-          continuous learning, self-improvement, and skill-mastery. Throughout
-          my life, I have always been computer-adjacent, but it wasn’t until I
-          finally took the time to dig deeper into it that I realized it’s what
-          I should have been doing all along.
-        </p>
-        <p className="">
-          My career interests include music education and general productivity
-          tools. I believe there is massive potential in using technology to
-          help make people into the best version of themselves. We are just
-          scratching the surface of what tech can do in the fields of
-          interpersonal business, communication, and self-actualization.
-        </p>
+      <div
+        className="max-w-screen-lg mx-auto
+        my-6 md:my-8 lg:my-10"
+      >
+        <div
+          className="flex flex-col md:flex-row justify-center items-center
+          md:space-x-10 lg:space-x-20 space-y-6 md:space-y-0"
+        >
+          <StaticImage
+            src="../assets/backpack.jpg"
+            alt="Konstantin on a backpacking trip"
+            width={480}
+            className="border shadow-lg max-w-sm sm:max-w-full"
+          />
+          <div className="flex justify-center items-center">
+            <IntroBox />
+          </div>
+        </div>
+        <ContentPanel />
+        <ContactMe />
       </div>
     </Layout>
+  );
+}
+
+function IntroBox() {
+  return (
+    <div className="sm:grid grid-cols-5 md:block">
+      <div className="mr-10 col-span-3">
+        <p
+          className="md:text-lg lg:text-xl font-kanit
+         text-gray-500 font-medium tracking-wider"
+        >
+          Hey, I'm
+        </p>
+        <p
+          className="text-4xl md:text-5xl lg:text-6xl
+          text-gray-700 font-semibold tracking-wider"
+        >
+          Konstantin
+        </p>
+        <p
+          className="md:text-lg lg:text-xl text-gray-800
+          leading-tight md:leading-tight lg:leading-tight pt-1"
+        >
+          I'm a Software Engineer from
+          <br />
+          Minneapolis, Minnesota
+        </p>
+      </div>
+      <div className="col-span-2 flex sm:justify-end md:justify-start items-center">
+        <Link
+          className="mt-4 sm:mt-0 md:mt-4 lg:mt-6 inline-block btn"
+          to="/about"
+        >
+          <p
+            className="font-kanit text-base md:text-lg lg:text-xl
+            uppercase text-gray-100 font-medium tracking-widest"
+          >
+            Learn More
+          </p>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+const PanelContent = [
+  {
+    title: 'See my work',
+    subtitle:
+      "I'm excited about building beautiful and performant programs for humans. I believe in technology's capacity to draw out the best you and I have to offer.",
+    button: 'View Projects',
+    payload: '/projects',
+  },
+  {
+    title: 'I have a blog...',
+    subtitle:
+      'Where I write about programming, life, music, and more. Thematic consistency is not guaranteed. Updates monthly.',
+    button: 'Read Now',
+    payload: '/blog',
+  },
+];
+
+function ContentPanel() {
+  return (
+    <div
+      className="flex flex-col border-t
+      py-14 md:py-16 lg:py-20
+      my-10 md:my-16 lg:my-20
+      space-y-16 md:space-y-20 lg:space-y-28"
+    >
+      {PanelContent.map((el, i) => (
+        <PanelItem key={i} el={el} />
+      ))}
+    </div>
+  );
+}
+
+function PanelItem({ el }) {
+  return (
+    <div
+      className="sm:grid grid-cols-5 m-4 w-full mx-auto
+      max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl"
+    >
+      <div className="col-span-3 pr-6">
+        <h3
+          className="text-xl md:text-2xl lg:text-3xl
+          text-gray-700 font-semibold tracking-wider"
+        >
+          {el.title}
+        </h3>
+        <p
+          className="md:text-lg lg:text-xl text-gray-800
+          leading-tight md:leading-tight lg:leading-tight pt-1"
+        >
+          {el.subtitle}
+        </p>
+      </div>
+      <div
+        className="col-span-2 flex items-center sm:justify-end
+        mt-3 sm:mt-0"
+      >
+        <Link className="inline-block btn" to={el.payload}>
+          <p
+            className="font-kanit text-base md:text-lg lg:text-xl
+            uppercase text-gray-100 font-medium tracking-widest"
+          >
+            {el.button}
+          </p>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function ContactMe() {
+  return (
+    <div
+      className="mx-auto flex flex-col items-center 
+      space-y-2 md:space-y-3 lg:space-y-4
+      py-2 md:py-4 lg:py-6"
+    >
+      <h3
+        className="text-xl md:text-2xl lg:text-3xl
+        text-gray-700 font-semibold tracking-wider"
+      >
+        Have something to say?
+      </h3>
+      <Link className="inline-block btn" to="/contact">
+        <p
+          className="font-kanit text-base md:text-lg lg:text-xl
+          uppercase text-gray-100 font-medium tracking-widest"
+        >
+          Contact Me
+        </p>
+      </Link>
+    </div>
   );
 }
