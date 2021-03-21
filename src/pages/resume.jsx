@@ -29,7 +29,7 @@ export default function Resume() {
           title={contentfulPageContent.pageTitle}
           description={contentfulPageContent.pageDescription.pageDescription}
         />
-        <div className="flex flex-col max-w-sm mx-auto">
+        <div className="flex flex-col max-w-xs md:max-w-sm mx-auto">
           <StaticImage
             className="shadow-xl border mt-2 md:mt-3 lg:mt-4
             transform hover:scale-105
