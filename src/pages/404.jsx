@@ -1,52 +1,32 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
+/**
+ * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
+ */
 
-// styles
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
+import React from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-};
+import Layout from '../components/Layout';
 
-// markup
-const NotFoundPage = () => (
-  <main style={pageStyles}>
-    <title>Not found</title>
-    <h1 style={headingStyles}>Page not found</h1>
-    <p style={paragraphStyles}>
-      Sorry{' '}
-      <span role="img" aria-label="Pensive emoji">
-        😔
-      </span>{' '}
-      we couldn’t find what you were looking for.
-      <br />
-      {process.env.NODE_ENV === 'development' ? (
-        <>
-          <br />
-          Try creating a page in <code style={codeStyles}>src/pages/</code>.
-          <br />
-        </>
-      ) : null}
-      <br />
-      <Link to="/">Go home</Link>.
-    </p>
-  </main>
-);
-
-export default NotFoundPage;
+export default function NotFoundPage() {
+  return (
+    <Layout>
+      <div className="max-w-screen-sm mx-auto">
+        <h2
+          className="text-2xl md:text-3xl lg:text-4xl
+          text-gray-700 font-semibold tracking-wider
+          leading-none md:leading-none 
+          py-2 md:py-3 lg:py-4 px-2"
+        >
+          Page Not Found
+        </h2>
+        <Link
+          className="hover-shadow focus-ring px-2 py-1 
+          font-kanit text-gray-700 md:text-lg lg:text-xl"
+          to="/"
+        >
+          Go Home
+        </Link>
+      </div>
+    </Layout>
+  );
+}
