@@ -3,13 +3,15 @@
  */
 
 import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Head from '../components/head';
 
 export default function NotFoundPage() {
   return (
     <Layout>
+      <Head title="404" desc="Page Not Found" />
       <div className="max-w-screen-sm mx-auto">
         <h2
           className="text-2xl md:text-3xl lg:text-4xl

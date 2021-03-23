@@ -8,6 +8,8 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 import Layout from '../components/Layout';
+import Head from '../components/head';
+
 import { Break, Heading3, Heading4, HyperLInk, Text, Image } from './Markdown';
 
 import Arrow from '../svg/arrow-thin-left.svg';
@@ -15,6 +17,10 @@ import Arrow from '../svg/arrow-thin-left.svg';
 export default function BlogPost({ data }) {
   return (
     <Layout>
+      <Head
+        title={data.contentfulBlogPost.title}
+        desc={data.contentfulBlogPost.description.internal.content}
+      />
       <div className="max-w-screen-sm mx-auto px-2">
         <ReturnButton />
         <BlogHeader
@@ -88,6 +94,11 @@ export const query = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publicationDate(formatString: "MMMM Do, YYYY")
+      description {
+        internal {
+          content
+        }
+      }
       content {
         raw
       }

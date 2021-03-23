@@ -7,6 +7,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
+import Head from '../components/head';
 
 const query = graphql`
   query {
@@ -39,6 +40,10 @@ export default function Blog() {
   );
   return (
     <Layout>
+      <Head
+        title={contentfulPageContent.pageTitle}
+        desc={contentfulPageContent.pageDescription.pageDescription}
+      />
       <div className="max-w-screen-sm mx-auto">
         <PageHeader
           title={contentfulPageContent.pageTitle}

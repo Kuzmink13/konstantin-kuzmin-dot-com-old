@@ -8,6 +8,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
+import Head from '../components/head';
 
 const query = graphql`
   query {
@@ -24,6 +25,10 @@ export default function Resume() {
   const { contentfulPageContent } = useStaticQuery(query);
   return (
     <Layout>
+      <Head
+        title={contentfulPageContent.pageTitle}
+        desc={contentfulPageContent.pageDescription.pageDescription}
+      />
       <div className="max-w-screen-xl mx-auto">
         <PageHeader
           title={contentfulPageContent.pageTitle}

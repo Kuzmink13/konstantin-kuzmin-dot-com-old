@@ -8,6 +8,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
+import Head from '../components/head';
 
 const query = graphql`
   query {
@@ -24,7 +25,11 @@ export default function About() {
   const { contentfulPageContent } = useStaticQuery(query);
   return (
     <Layout>
-      <div className="max-w-screen-xl mx-auto">
+      <Head
+        title={contentfulPageContent.pageTitle}
+        desc={contentfulPageContent.pageDescription.pageDescription}
+      />
+      <div className="max-w-screen-xl xl:px-6 mx-auto">
         <PageHeader
           title={contentfulPageContent.pageTitle}
           description={contentfulPageContent.pageDescription.pageDescription}
@@ -47,23 +52,24 @@ export default function About() {
             lg:text-lg xl:text-xl"
           >
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae
-              justo eget magna fermentum iaculis. Amet consectetur adipiscing
-              elit duis tristique. Senectus et netus et malesuada fames ac.
-              Ipsum dolor sit amet consectetur adipiscing. Dui accumsan sit amet
-              nulla facilisi morbi. Elit eget gravida cum sociis natoque
-              penatibus et magnis.
+              Hey, I’m Konstantin. I’m a software engineer from Minneapolis,
+              Minnesota. I got started in software engineering by auditing free
+              MIT courses during the covid-19 pandemic. Since then, It’s been my
+              goal to build beautiful and performant programs for humans. I want
+              to create software that can enhance productivity, creativity, and
+              personal well-being. I believe in technology's capacity to draw
+              out the best you and I have to offer.
             </p>
             <p>
-              Semper risus in hendrerit gravida rutrum quisque non tellus. Ipsum
-              faucibus vitae aliquet nec ullamcorper sit. Tincidunt arcu non
-              sodales neque sodales. Scelerisque viverra mauris in aliquam sem
-              fringilla. Urna duis convallis convallis tellus. Lectus nulla at
-              volutpat diam ut venenatis. Interdum velit laoreet id donec
-              ultrices tincidunt arcu non. Quis enim lobortis scelerisque
-              fermentum dui faucibus in. Venenatis cras sed felis eget velit
-              aliquet sagittis id.
+              My formal training is in mechanical engineering; I have three
+              years of experience working in the medical device industry. I
+              decided to make a shift to software when I discovered my passion
+              for programming. I was drawn to tech by the community and its love
+              for continuous learning and self-improvement. Throughout my life,
+              I have always been computer-adjacent, but it wasn’t until I
+              finally took the time to dig deeper into it that I realized it’s
+              what I should have been doing all along. You can read more about
+              my journey in this blog post.
             </p>
             <p>
               Auctor neque vitae tempus quam pellentesque nec. Id diam maecenas

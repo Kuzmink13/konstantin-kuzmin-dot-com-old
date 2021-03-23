@@ -6,6 +6,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/Layout';
+import Head from '../components/head';
 
 const query = graphql`
   query {
@@ -19,18 +20,22 @@ const query = graphql`
 `;
 
 export default function Contact() {
+  const { contentfulPageContent } = useStaticQuery(query);
   return (
     <Layout>
+      <Head
+        title={contentfulPageContent.pageTitle}
+        desc={contentfulPageContent.pageDescription.pageDescription}
+      />
       <div className="max-w-screen-lg mx-auto grid lg:grid-cols-5">
-        <ContactHeader />
+        <ContactHeader content={contentfulPageContent} />
         <ContactForm />
       </div>
     </Layout>
   );
 }
 
-function ContactHeader() {
-  const { contentfulPageContent } = useStaticQuery(query);
+function ContactHeader({ content }) {
   return (
     <hgroup
       className="flex flex-col lg:col-span-2 justify-center items-center
@@ -40,7 +45,7 @@ function ContactHeader() {
         className="text-3xl md:text-4xl lg:text-5xl
         text-gray-700 font-semibold tracking-wider"
       >
-        {contentfulPageContent.pageTitle}
+        {content.pageTitle}
       </h2>
       <p
         className="text-md md:text-lg lg:text-xl
@@ -48,7 +53,7 @@ function ContactHeader() {
         py-2 md:py-3 lg:py-4
         max-w-xs md:max-w-sm"
       >
-        {contentfulPageContent.pageDescription.pageDescription}
+        {content.pageDescription.pageDescription}
       </p>
     </hgroup>
   );

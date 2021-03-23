@@ -11,6 +11,7 @@ import PageHeader from '../components/PageHeader';
 
 import ProjectLinkIcon from '../svg/link.svg';
 import GithubLInkIcon from '../svg/github.svg';
+import Head from '../components/head';
 
 const query = graphql`
   query {
@@ -50,6 +51,10 @@ export default function Projects() {
   const { contentfulPageContent, allContentfulProject } = useStaticQuery(query);
   return (
     <Layout>
+      <Head
+        title={contentfulPageContent.pageTitle}
+        desc={contentfulPageContent.pageDescription.pageDescription}
+      />
       <div className="max-w-screen-xl mx-auto">
         <PageHeader
           title={contentfulPageContent.pageTitle}

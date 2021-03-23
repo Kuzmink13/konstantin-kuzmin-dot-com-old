@@ -7,10 +7,12 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
+import Head from '../components/head';
 
 export default function Home() {
   return (
     <Layout>
+      <Head />
       <div
         className="max-w-screen-lg mx-auto
         my-6 md:my-8 lg:my-10"
@@ -70,7 +72,7 @@ function IntroBox() {
             className="font-kanit text-base md:text-lg lg:text-xl
             uppercase text-gray-100 font-medium tracking-widest"
           >
-            Learn More
+            About Me
           </p>
         </Link>
       </div>
@@ -87,7 +89,7 @@ const PanelContent = [
     payload: '/projects',
   },
   {
-    title: 'I have a blog...',
+    title: 'Vist my blog',
     subtitle:
       'Where I write about programming, life, music, and more. Thematic consistency is not guaranteed. Updates monthly.',
     button: 'Read Now',
@@ -117,12 +119,12 @@ function PanelItem({ el }) {
       max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl"
     >
       <div className="col-span-3 pr-6">
-        <h3
+        <h2
           className="text-xl md:text-2xl lg:text-3xl
           text-gray-700 font-semibold tracking-wider"
         >
           {el.title}
-        </h3>
+        </h2>
         <p
           className="md:text-lg lg:text-xl text-gray-800
           leading-tight md:leading-tight lg:leading-tight pt-1"
@@ -154,12 +156,12 @@ function ContactMe() {
       space-y-2 md:space-y-3 lg:space-y-4
       py-2 md:py-4 lg:py-6"
     >
-      <h3
+      <h2
         className="text-xl md:text-2xl lg:text-3xl
         text-gray-700 font-semibold tracking-wider"
       >
         Have something to say?
-      </h3>
+      </h2>
       <Link className="inline-block btn" to="/contact">
         <p
           className="font-kanit text-base md:text-lg lg:text-xl

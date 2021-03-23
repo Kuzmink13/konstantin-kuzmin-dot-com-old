@@ -9,6 +9,7 @@ module.exports = {
     copyright: '2021',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-contentful`,
       options: {
