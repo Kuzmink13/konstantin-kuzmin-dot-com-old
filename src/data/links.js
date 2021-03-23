@@ -43,29 +43,35 @@ export const links = [
     payload: '/resume',
   },
   {
-    name: 'Content',
-    type: TYPES.LIST,
-    payload: [
-      {
-        name: 'Blog',
-        svg: <BlogIcon />,
-        type: TYPES.LINK,
-        payload: '/blog',
-      },
-      {
-        name: 'Reviews',
-        svg: <ReviewIcon />,
-        type: TYPES.LINK,
-        payload: '/reviews',
-      },
-      {
-        name: 'Music',
-        svg: <MusicIcon />,
-        type: TYPES.LINK,
-        payload: '/music',
-      },
-    ],
+    name: 'Blog',
+    svg: <BlogIcon />,
+    type: TYPES.LINK,
+    payload: '/blog',
   },
+  // {
+  //   name: 'Content',
+  //   type: TYPES.LIST,
+  //   payload: [
+  //     {
+  //       name: 'Blog',
+  //       svg: <BlogIcon />,
+  //       type: TYPES.LINK,
+  //       payload: '/blog',
+  //     },
+  //     {
+  //       name: 'Reviews',
+  //       svg: <ReviewIcon />,
+  //       type: TYPES.LINK,
+  //       payload: '/reviews',
+  //     },
+  //     {
+  //       name: 'Music',
+  //       svg: <MusicIcon />,
+  //       type: TYPES.LINK,
+  //       payload: '/music',
+  //     },
+  //   ],
+  // },
 ];
 
 export const linksFlat = [...links.slice(0, 4), ...links[4].payload];

@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 
 import { TitleBlock } from './Header';
 
-import { linksFlat as items } from '../data/links';
+import { links as items } from '../data/links';
 import { SIDEBAR_ANIMATION_DURATION } from '../data/constants';
 
 import { onArrows, onEscape, onLeaveTree } from '../logic/utilities';
