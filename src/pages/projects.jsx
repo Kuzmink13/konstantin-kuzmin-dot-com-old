@@ -82,7 +82,7 @@ function ProjectCard({ data }) {
       w-96 md:w-80 lg:w-96 mx-3 my-6
       border rounded-lg shadow-lg"
     >
-      <GatsbyImage image={image} alt={data.image.title} />
+      <GatsbyImage image={image} alt={data.image.title} className="border-b" />
       <div
         className="relative flex flex-col flex-grow items-center
         pt-5 pb-2 px-2"
@@ -110,10 +110,12 @@ function ProjectCard({ data }) {
 
 function ProjectLinks({ data }) {
   return (
-    <div className="flex flex-row justify-evenly font-kanit w-full">
-      <Link link={data.projectLink} text="Visit Project">
-        <ProjectLinkIcon className="w-4 h-4 mr-2" />
-      </Link>
+    <div className="flex flex-row justify-evenly font-kanit w-full mt-1">
+      {data.projectLink && (
+        <Link link={data.projectLink} text="Visit Project">
+          <ProjectLinkIcon className="w-4 h-4 mr-2" />
+        </Link>
+      )}
       <Link link={data.githubLink} text="Visit on Github">
         <GithubLInkIcon className="w-4 h-4 mr-2" />
       </Link>
