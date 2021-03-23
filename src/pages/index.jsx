@@ -49,7 +49,7 @@ function IntroBox() {
           Hey, I'm
         </p>
         <p
-          className="text-4xl md:text-5xl lg:text-6xl
+          className="text-4xl md:text-5xl lg:text-6xl font-kanit
           text-gray-700 font-semibold tracking-wider"
         >
           Konstantin

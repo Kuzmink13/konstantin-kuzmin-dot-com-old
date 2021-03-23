@@ -30,6 +30,11 @@ export default function Head({ title, desc }) {
         name="description"
         content={desc || site.siteMetadata.description}
       />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="preload"
+      />
     </Helmet>
   );
 }
