@@ -13,19 +13,22 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Konstantin Kuzmin`,
-        short_name: `Konstantin Kuzmin`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#f3f4f6`,
-        display: `standalone`,
+        name: 'Konstantin Kuzmin',
+        short_name: 'Konstantin Kuzmin',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#f3f4f6',
+        display: 'standalone',
         icon: 'src/assets/site-icon-512x512.png',
+        icon_options: {
+          purpose: 'any maskable',
+        },
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
@@ -39,8 +42,9 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-offline',
     'gatsby-plugin-postcss',
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
   ],
 };
