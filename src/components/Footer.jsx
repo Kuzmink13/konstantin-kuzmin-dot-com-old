@@ -22,11 +22,12 @@ export default function Footer() {
   const { site } = useStaticQuery(query);
 
   return (
-    <footer className="bg-gray-100 w-full pt-8 pb-8">
+    <footer className="bg-gray-100 w-full py-8 md:py-10">
       <SocialBar />
       <p
         className="font-kanit text-gray-700 text-center 
-        text-xs font-medium tracking-wide uppercase"
+        text-xs md:text-sm md:pt-1
+        font-medium tracking-wide uppercase"
       >
         &copy; {site.siteMetadata.copyright} &middot; {site.siteMetadata.author}{' '}
         &middot; all rights reserved
@@ -59,7 +60,7 @@ export function SocialIcon({ name, svg, link, target }) {
       title={name}
       className="block focus-ring rounded-lg
       text-gray-500 hover:text-gray-700
-      h-9 w-9 p-2"
+      h-9 w-9 md:h-10 md:w-10 p-2"
       target={target}
     >
       {svg}
