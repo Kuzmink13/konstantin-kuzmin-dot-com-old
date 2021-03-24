@@ -1,17 +1,17 @@
 {
-  "name": "my-gatsby-site",
-  "version": "1.0.0",
+  "name": "Konstantin-Kuzmin-dot-com",
+  "version": "2.0.0",
   "private": true,
-  "description": "My Gatsby Site",
-  "author": "KuzminK13",
+  "description": "The personal website / portfolio of Konstantin Kuzmin, a software engineer from Minneapolis, Minnesota",
+  "author": "Konstantin Kuzmin",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
     "develop": "npm run start",
-    "start": "env-cmd -f .env.development gatsby develop",
-    "build": "env-cmd -f .env.development gatsby build",
-    "serve": "gatsby serve",
+    "start": "env-cmd -f .env.development gatsby develop -H 0.0.0.0",
+    "build": "env-cmd -f .env.development gatsby build && npm run serve",
+    "serve": "gatsby serve -H 0.0.0.0",
     "clean": "gatsby clean",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
