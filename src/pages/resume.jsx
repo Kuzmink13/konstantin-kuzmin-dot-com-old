@@ -6,6 +6,8 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import resumeFile from '../../resume/konstantinkuzmin_resume.pdf';
+
 import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
 import Head from '../components/head';
@@ -55,14 +57,14 @@ export default function Resume() {
 function Download() {
   return (
     <div className="flex justify-center my-10 md:my-12 lg:my-16">
-      <button type="button" className="btn">
+      <a href={resumeFile} download className="btn">
         <p
           className="font-kanit text-base md:text-lg lg:text-lg
           uppercase text-gray-100 font-medium tracking-widest"
         >
           download pdf
         </p>
-      </button>
+      </a>
     </div>
   );
 }
