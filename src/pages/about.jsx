@@ -34,11 +34,13 @@ export default function About() {
           title={contentfulPageContent.pageTitle}
           description={contentfulPageContent.pageDescription.pageDescription}
         />
-        <StaticImage
-          src="../assets/square.jpg"
-          alt="Konstantin on a backpacking trip"
-          className="block md:hidden mt-4 w-40 mx-auto rounded-full border shadow-lg"
-        />
+        <div className="md:hidden mt-4 flex justify-center">
+          <StaticImage
+            src="../assets/square.jpg"
+            alt="Konstantin on a backpacking trip"
+            className="w-40 rounded-full border shadow-lg"
+          />
+        </div>
         <div
           className="grid 
           md:grid-cols-2 xl:grid-cols-5 
