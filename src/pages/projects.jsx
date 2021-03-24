@@ -146,10 +146,12 @@ function Link({ link, children, text }) {
 
 function TechnologyList({ technologies }) {
   return (
-    <div className="flex flex-row justify-center space-x-5 py-3">
+    <div className="flex flex-row justify-center space-x-6 py-3">
       {technologies.map((el) => (
         <img
-          className="h-8"
+          className="h-8
+          transform hover:scale-125
+          transition duration-700"
           key={el.title}
           src={el.file.url}
           alt={el.description}
