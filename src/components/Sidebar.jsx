@@ -30,20 +30,23 @@ export default function Sidebar({ isOpen, close }) {
     }
   }, [keyfns, isOpen]);
 
-  // SET OPEN/CLOSE ANIMATION
+  // SET OPEN/CLOSE ANIMATION & LOCK SCROLLING
   useEffect(() => {
     const group = document.getElementById('group');
     const sidebar = document.getElementById('sidebar');
     const background = document.getElementById('dimmed-background');
+    const wrapper = document.getElementById('gatsby-focus-wrapper');
     if (isOpen) {
       group.classList.replace('invisible', 'visible');
       sidebar.classList.replace('w-0', 'w-60');
       background.classList.replace('ease-in', 'ease-out');
       background.classList.replace('opacity-0', 'opacity-20');
+      wrapper.classList.add('overflow-hidden');
     } else {
       sidebar.classList.replace('w-60', 'w-0');
       background.classList.replace('ease-out', 'ease-in');
       background.classList.replace('opacity-20', 'opacity-0');
+      wrapper.classList.remove('overflow-hidden');
       setTimeout(
         () => group.classList.replace('visible', 'invisible'),
         SIDEBAR_ANIMATION_DURATION
