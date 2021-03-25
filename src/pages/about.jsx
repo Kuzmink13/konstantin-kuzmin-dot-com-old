@@ -5,6 +5,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
@@ -18,11 +19,18 @@ const query = graphql`
         pageDescription
       }
     }
+    contentfulAboutContent(slug: { eq: "aboutMe" }) {
+      aboutMeText {
+        raw
+      }
+    }
   }
 `;
 
 export default function About() {
-  const { contentfulPageContent } = useStaticQuery(query);
+  const { contentfulPageContent, contentfulAboutContent } = useStaticQuery(
+    query
+  );
   return (
     <Layout>
       <Head
@@ -49,40 +57,11 @@ export default function About() {
         >
           <div
             className="flex flex-col mx-auto xl:col-span-3
-            max-w-sm sm:max-w-md md:max-w-full
+            max-w-sm sm:max-w-md md:max-w-full text-gray-800
             space-y-3 lg:space-y-4
             lg:text-lg xl:text-xl"
           >
-            <p>
-              Hey, I’m Konstantin. I’m a software engineer from Minneapolis,
-              Minnesota. I got started in software engineering by auditing free
-              MIT courses during the covid-19 pandemic. Since then, It’s been my
-              goal to build beautiful and performant programs for humans. I want
-              to create software that can enhance productivity, creativity, and
-              personal well-being. I believe in technology's capacity to draw
-              out the best you and I have to offer.
-            </p>
-            <p>
-              My formal training is in mechanical engineering; I have three
-              years of experience working in the medical device industry. I
-              decided to make a shift to software when I discovered my passion
-              for programming. I was drawn to tech by the community and its love
-              for continuous learning and self-improvement. Throughout my life,
-              I have always been computer-adjacent, but it wasn’t until I
-              finally took the time to dig deeper into it that I realized it’s
-              what I should have been doing all along. You can read more about
-              my journey in this blog post.
-            </p>
-            <p>
-              Auctor neque vitae tempus quam pellentesque nec. Id diam maecenas
-              ultricies mi eget. Dictum non consectetur a erat nam at lectus
-              urna duis. Pellentesque nec nam aliquam sem et. Amet consectetur
-              adipiscing elit duis tristique sollicitudin nibh sit. Pretium
-              viverra suspendisse potenti nullam ac tortor vitae purus faucibus.
-              Sed turpis tincidunt id aliquet risus feugiat. Magna sit amet
-              purus gravida quis blandit turpis cursus. Sed viverra ipsum nunc
-              aliquet. Fermentum dui faucibus in ornare.
-            </p>
+            {renderRichText(contentfulAboutContent.aboutMeText)}
           </div>
           <div className="hidden md:flex flex-col xl:col-span-2">
             <StaticImage
