@@ -32,7 +32,13 @@ const query = graphql`
           }
           image {
             title
-            gatsbyImageData(aspectRatio: 1.77777, formats: [AUTO, WEBP])
+            gatsbyImageData(
+              aspectRatio: 1.77777
+              quality: 100
+              width: 400
+              formats: [AUTO, WEBP]
+              placeholder: DOMINANT_COLOR
+            )
           }
           technologies {
             title
@@ -80,14 +86,18 @@ function ProjectList({ projects }) {
 }
 
 function ProjectCard({ data }) {
-  const image = getImage(data.image);
   return (
     <div
       className="flex flex-col overflow-hidden
       w-96 md:w-80 lg:w-96 mx-3 my-6
       border rounded-lg shadow-lg"
     >
-      <GatsbyImage image={image} alt={data.image.title} className="border-b" />
+      <GatsbyImage
+        image={getImage(data.image)}
+        alt={data.image.title}
+        loading="eager"
+        className="border-b"
+      />
       <div
         className="relative flex flex-col flex-grow items-center
         pt-5 pb-2 px-2"
@@ -152,6 +162,8 @@ function TechnologyList({ technologies }) {
           className="h-8
           transform hover:scale-125
           transition duration-700"
+          width="32"
+          height="32"
           key={el.title}
           src={el.file.url}
           alt={el.description}

@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
 import Layout from '../components/Layout';
@@ -24,13 +24,34 @@ const query = graphql`
         raw
       }
     }
+    square: contentfulAsset(contentful_id: { eq: "6qSCVzvjVdHYQ8iqIgUzPF" }) {
+      description
+      gatsbyImageData(
+        width: 160
+        quality: 100
+        formats: [AUTO, WEBP]
+        placeholder: DOMINANT_COLOR
+      )
+    }
+    full: contentfulAsset(contentful_id: { eq: "2W0FJJuzjgSEWPDPPyuz73" }) {
+      description
+      gatsbyImageData(
+        height: 500
+        quality: 100
+        formats: [AUTO, WEBP]
+        placeholder: DOMINANT_COLOR
+      )
+    }
   }
 `;
 
 export default function About() {
-  const { contentfulPageContent, contentfulAboutContent } = useStaticQuery(
-    query
-  );
+  const {
+    contentfulPageContent,
+    contentfulAboutContent,
+    square,
+    full,
+  } = useStaticQuery(query);
   return (
     <Layout>
       <Head
@@ -43,9 +64,10 @@ export default function About() {
           description={contentfulPageContent.pageDescription.pageDescription}
         />
         <div className="md:hidden mt-4 flex justify-center">
-          <StaticImage
-            src="../assets/square.jpg"
-            alt="Konstantin on a backpacking trip"
+          <GatsbyImage
+            image={getImage(square)}
+            alt={square.description}
+            loading="eager"
             className="w-40 rounded-full border shadow-lg"
           />
         </div>
@@ -64,11 +86,10 @@ export default function About() {
             {renderRichText(contentfulAboutContent.aboutMeText)}
           </div>
           <div className="hidden md:flex flex-col xl:col-span-2">
-            <StaticImage
-              src="../assets/vertical.jpg"
-              alt="Konstantin on a backpacking trip"
-              height={500}
-              quality={100}
+            <GatsbyImage
+              image={getImage(full)}
+              alt={full.description}
+              loading="eager"
               className="flex-grow border shadow-lg"
             />
           </div>

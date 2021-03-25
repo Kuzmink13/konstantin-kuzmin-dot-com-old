@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import resumeFile from '../../resume/konstantinkuzmin_resume.pdf';
 
@@ -20,11 +20,20 @@ const query = graphql`
         pageDescription
       }
     }
+    resume: contentfulAsset(contentful_id: { eq: "4HK2qyaO3gnqAbaZ5KUp87" }) {
+      description
+      gatsbyImageData(
+        width: 384
+        quality: 100
+        formats: [AUTO, WEBP]
+        placeholder: DOMINANT_COLOR
+      )
+    }
   }
 `;
 
 export default function Resume() {
-  const { contentfulPageContent } = useStaticQuery(query);
+  const { contentfulPageContent, resume } = useStaticQuery(query);
   return (
     <Layout>
       <Head
@@ -37,15 +46,13 @@ export default function Resume() {
           description={contentfulPageContent.pageDescription.pageDescription}
         />
         <div className="flex flex-col max-w-xs md:max-w-sm mx-auto">
-          <StaticImage
+          <GatsbyImage
             className="shadow-xl border mt-2 md:mt-3 lg:mt-4
             transform hover:scale-105
             transition duration-700"
-            src="../assets/res.JPG"
-            width={384}
-            alt="resume screenshot"
-            placeholder="none"
-            formats={['auto', 'webp']}
+            image={getImage(resume)}
+            alt={resume.description}
+            loading="eager"
           />
           <Download />
         </div>

@@ -3,13 +3,28 @@
  */
 
 import React from 'react';
-import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import Head from '../components/head';
 
+const query = graphql`
+  query {
+    hero: contentfulAsset(contentful_id: { eq: "24KUjJGHSNuV7BMuB1srEW" }) {
+      description
+      gatsbyImageData(
+        width: 480
+        quality: 100
+        formats: [AUTO, WEBP]
+        placeholder: DOMINANT_COLOR
+      )
+    }
+  }
+`;
+
 export default function Home() {
+  const { hero } = useStaticQuery(query);
   return (
     <Layout>
       <Head />
@@ -21,10 +36,10 @@ export default function Home() {
           className="flex flex-col md:flex-row justify-center items-center
           md:space-x-10 lg:space-x-20 space-y-6 md:space-y-0"
         >
-          <StaticImage
-            src="../assets/backpack.jpg"
-            alt="Konstantin on a backpacking trip"
-            width={480}
+          <GatsbyImage
+            image={getImage(hero)}
+            alt={hero.description}
+            loading="eager"
             className="border shadow-lg max-w-sm sm:max-w-full"
           />
           <div className="flex justify-center items-center">
