@@ -1,0 +1,10 @@
+{
+  "extends": ["wesbos"],
+  "rules": {
+    "no-unused-expressions": [
+      2,
+      { "allowTernary": true, "allowShortCircuit": true }
+    ],
+    "react/prop-types": 0
+  }
+}

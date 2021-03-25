@@ -1,5 +1,9 @@
+/**
+ * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
+ */
+
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -10,7 +14,13 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      boxShadow: ['active'],
+      translate: ['active'],
+      backgroundColor: ['active'],
+      visibility: ['group-hover', 'focus-within'],
+      ringWidth: ['focus-visible'],
+    },
   },
   plugins: [],
 };
