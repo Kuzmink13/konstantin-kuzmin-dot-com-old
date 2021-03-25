@@ -1,6 +1,6 @@
 {
   "name": "Konstantin-Kuzmin-dot-com",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "description": "The personal website / portfolio of Konstantin Kuzmin, a software engineer from Minneapolis, Minnesota",
   "author": "Konstantin Kuzmin",
@@ -10,8 +10,9 @@
   "scripts": {
     "develop": "npm run start",
     "start": "env-cmd -f .env.development gatsby develop -H 0.0.0.0",
-    "build": "env-cmd -f .env.development gatsby build && npm run serve",
+    "build": "env-cmd -f .env.development gatsby build",
     "serve": "gatsby serve -H 0.0.0.0",
+    "buildServe": "npm run build && npm run serve",
     "clean": "gatsby clean",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
