@@ -34,8 +34,4 @@ export const social = [
     link: 'https://www.twitter.com/kuzmink13',
     target: '_',
   },
-  // { name: 'instagram', svg: svg.instagram, link: '' },
-  // { name: 'medium', svg: svg.medium, link: '' },
-  // { name: 'youtube', svg: svg.youtube, link: '' },
-  // { name: 'stackoverflow', svg: svg.stackoverflow, link: '' },
 ];

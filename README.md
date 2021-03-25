@@ -1,3 +1,5 @@
 # Welcome to KonstantinKuzmin.com
 
-A simple, responsive website that serves as my home on the internet. Built with React and TailwindCSS.
+A simple, responsive website that serves as my home on the internet.
+
+Copyright Konstantin Kuzmin, 2021

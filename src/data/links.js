@@ -9,8 +9,6 @@ import ContactIcon from '../svg/envelope.svg';
 import ProjectsIcon from '../svg/computer-laptop.svg';
 import ResumeIcon from '../svg/document.svg';
 import BlogIcon from '../svg/news-paper.svg';
-import ReviewIcon from '../svg/thumbs-up.svg';
-import MusicIcon from '../svg/headphones.svg';
 
 export const TYPES = {
   LINK: 'LINK',
@@ -48,30 +46,6 @@ export const links = [
     type: TYPES.LINK,
     payload: '/blog',
   },
-  // {
-  //   name: 'Content',
-  //   type: TYPES.LIST,
-  //   payload: [
-  //     {
-  //       name: 'Blog',
-  //       svg: <BlogIcon />,
-  //       type: TYPES.LINK,
-  //       payload: '/blog',
-  //     },
-  //     {
-  //       name: 'Reviews',
-  //       svg: <ReviewIcon />,
-  //       type: TYPES.LINK,
-  //       payload: '/reviews',
-  //     },
-  //     {
-  //       name: 'Music',
-  //       svg: <MusicIcon />,
-  //       type: TYPES.LINK,
-  //       payload: '/music',
-  //     },
-  //   ],
-  // },
 ];
 
 export const linksFlat = [...links.slice(0, 4), ...links[4].payload];
