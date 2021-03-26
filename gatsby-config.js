@@ -11,6 +11,15 @@ module.exports = {
     copyright: '2021',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.G_TRACKING_ID_1, process.env.G_TRACKING_ID_2],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-preload-fonts',
     {
