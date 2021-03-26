@@ -2,7 +2,7 @@
  * Copyright (c) Konstantin Kuzmin. All Rights Reserved.
  */
 
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/Layout';
@@ -59,21 +59,58 @@ function ContactHeader({ content }) {
   );
 }
 
+const FormContext = React.createContext();
+
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+
 function ContactForm() {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (e) =>
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+
+  const handleSubmit = (e) => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...formState }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  };
+
   return (
     <form
+      name="contact"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
       className="lg:col-span-3
       px-4 lg:px-12
       py-4 md:py-5 lg:py-6"
     >
+      <input type="hidden" name="form-name" value="contact" />
       <div
         className="flex flex-wrap mx-auto
         max-w-sm md:max-w-md lg:max-w-lg"
       >
-        <Field title="Name" />
-        <Field title="Email" />
-        <Field title="Subject" />
-        <BigField title="Message" />
+        <FormContext.Provider value={{ formState, handleChange }}>
+          <Field title="Name" />
+          <Field title="Email" />
+          <Field title="Subject" />
+          <BigField title="Message" />
+        </FormContext.Provider>
       </div>
       <SubmitButton />
     </form>
@@ -87,7 +124,7 @@ function Field({ title }) {
       py-1 md:py-2 lg:py-3"
     >
       <ContactLabel title={title} />
-      <ContactInput title={title} />
+      <ContactInput title={title.toLowerCase()} />
     </div>
   );
 }
@@ -101,7 +138,7 @@ function BigField({ title }) {
       py-3 md:py-4 lg:py-5"
     >
       <ContactLabel title={title} />
-      <ContactTextArea title={title} />
+      <ContactTextArea title={title.toLowerCase()} />
     </div>
   );
 }
@@ -120,19 +157,23 @@ function ContactLabel({ title }) {
 }
 
 function ContactInput({ title }) {
+  const { formState, handleChange } = useContext(FormContext);
   return (
     <input
       className="flex-grow focus-ring border shadow-sm rounded-lg p-2
       text-gray-800 md:text-lg lg:text-xl
       w-64 md:w-72 lg:w-80"
-      type="text"
+      type={title === 'email' ? 'email' : 'text'}
       name={title}
-      placeholder={`your ${title.toLowerCase()}...`}
+      value={formState[title]}
+      onChange={handleChange}
+      placeholder={`your ${title}...`}
     />
   );
 }
 
 function ContactTextArea({ title }) {
+  const { formState, handleChange } = useContext(FormContext);
   return (
     <div className="flex flex-grow">
       <textarea
@@ -140,8 +181,10 @@ function ContactTextArea({ title }) {
         text-gray-800 md:text-lg lg:text-xl
         w-64 md:w-72 lg:w-80
         p-2 resize-none overflow-auto"
-        subject={title}
-        placeholder={`your ${title.toLowerCase()}...`}
+        name={title}
+        value={formState[title]}
+        onChange={handleChange}
+        placeholder={`your ${title}...`}
       />
     </div>
   );
