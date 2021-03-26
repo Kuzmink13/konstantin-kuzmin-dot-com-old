@@ -3,7 +3,7 @@
  */
 
 import React, { useContext, useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, navigate } from 'gatsby';
 
 import Layout from '../components/Layout';
 import Head from '../components/head';
@@ -83,7 +83,7 @@ function ContactForm() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...formState }),
     })
-      .then(() => alert('Success!'))
+      .then(() => navigate('/Thanks'))
       .catch((error) => alert(error));
 
     e.preventDefault();
