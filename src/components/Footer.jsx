@@ -22,7 +22,7 @@ export default function Footer() {
   const { site } = useStaticQuery(query);
 
   return (
-    <footer className="bg-gray-100 w-full py-8 md:py-10">
+    <footer className="bg-gray-100 w-full py-8 md:py-10 flex-shrink-0">
       <SocialBar />
       <p
         className="font-kanit text-gray-700 text-center 

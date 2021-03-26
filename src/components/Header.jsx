@@ -26,7 +26,7 @@ export default function Header({ toggle, close }) {
 
   return (
     <header
-      className="flex flex-row justify-between items-center
+      className="flex flex-row justify-between items-center flex-shrink-0
       w-full max-w-screen-xl 
       px-6 md:px-10 lg:px-16 py-4
       mx-auto space-x-12

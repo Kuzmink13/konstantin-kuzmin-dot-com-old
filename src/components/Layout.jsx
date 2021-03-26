@@ -17,7 +17,7 @@ export default function Layout({ children }) {
       <Header toggle={() => setSidebarState(!sidebar)} close={close} />
       <Sidebar isOpen={sidebar} close={close} />
       <main
-        className="flex-grow w-full 
+        className="flex-grow w-full flex-shrink-0
         px-6 md:px-10 lg:px-16 mx-auto
         py-6 md:py-8 lg:py-10"
       >
