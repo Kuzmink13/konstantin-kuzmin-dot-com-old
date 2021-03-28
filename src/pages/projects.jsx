@@ -97,6 +97,7 @@ function ProjectCard({ data }) {
         alt={data.image.title}
         loading="eager"
         className="border-b"
+        imgStyle={{ borderRadius: '8px 8px 0px 0px' }}
       />
       <div
         className="relative flex flex-col flex-grow items-center

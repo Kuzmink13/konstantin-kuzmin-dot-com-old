@@ -69,6 +69,7 @@ export default function About() {
             alt={square.description}
             loading="eager"
             className="w-40 rounded-full border shadow-lg"
+            imgStyle={{ borderRadius: 9999 }}
           />
         </div>
         <div
