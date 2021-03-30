@@ -92,6 +92,7 @@ export default function About() {
               alt={full.description}
               loading="eager"
               className="flex-grow border shadow-lg"
+              objectPosition="50% 15%"
             />
           </div>
         </div>

@@ -83,7 +83,7 @@ function ContactForm() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...formState }),
     })
-      .then(() => navigate('/Thanks'))
+      .then(() => navigate('/thanks'))
       .catch((error) => alert(error));
 
     e.preventDefault();

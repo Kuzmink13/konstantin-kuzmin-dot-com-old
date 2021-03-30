@@ -104,7 +104,7 @@ const PanelContent = [
     payload: '/projects',
   },
   {
-    title: 'Vist my blog',
+    title: 'Visit my blog',
     subtitle:
       'Where I write about programming, life, music, and more. Thematic consistency is not guaranteed. Updates monthly.',
     button: 'Read Now',
