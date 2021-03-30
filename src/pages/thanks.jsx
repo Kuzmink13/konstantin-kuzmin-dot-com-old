@@ -11,7 +11,7 @@ import Head from '../components/head';
 export default function NotFoundPage() {
   return (
     <Layout>
-      <Head title="404" desc="Page Not Found" />
+      <Head title="Thanks" desc="Your message has been received" />
       <div className="max-w-screen-sm mx-auto">
         <h2
           className="text-2xl md:text-3xl lg:text-4xl
