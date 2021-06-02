@@ -6,7 +6,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import resumeFile from '../../resume/konstantinkuzmin_resume.pdf';
+import resumeFile from '../assets/konstantinkuzmin_resume.pdf';
 
 import Layout from '../components/Layout';
 import PageHeader from '../components/PageHeader';
